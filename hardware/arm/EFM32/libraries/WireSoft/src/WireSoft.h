@@ -74,7 +74,7 @@ class TwoWireSoft : public WireBase {
 	
     ~TwoWireSoft() {}
     
-	void setPins(uint8_t _sda,uint8_t _scl){} /* nothing to do */
+	void setPins(__attribute__((unused))  uint8_t _sda, __attribute__((unused))  uint8_t _scl){} /* nothing to do */
 	
     void sclPin(bool state) {
       I2C_DELAY(this->i2c_delay);
