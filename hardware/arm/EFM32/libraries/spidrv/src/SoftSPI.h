@@ -63,8 +63,8 @@ class SoftSPI {
 	this->msbfist = bitOrder;	  
   }
   
-  void setClockDivider(uint8_t clockDevider) {
-	  UNUSED(clockDevider);
+  void setClockDivider(uint8_t clockDivider) {
+	  UNUSED(clockDivider);
   }
 
   void beginTransaction(SPISettings settings){
