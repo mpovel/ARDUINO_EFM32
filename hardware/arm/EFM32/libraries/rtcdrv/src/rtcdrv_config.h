@@ -35,7 +35,7 @@
 //#define EMDRV_RTCDRV_SLEEPDRV_INTEGRATION
 
 /// @brief Define to let RTCDRV clock on LFRCO, default is LFXO.
-//#define EMDRV_RTCDRV_USE_LFRCO
+#define EMDRV_RTCDRV_USE_LFRCO
 
 /** @} (end addtogroup RTCDRV) */
 /** @} (end addtogroup emdrv) */
