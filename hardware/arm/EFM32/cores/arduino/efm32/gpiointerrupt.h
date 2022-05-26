@@ -29,6 +29,7 @@ extern "C" {
 
 typedef void (*GPIOINT_IrqCallbackPtr_t)(void);
 
+uint8_t digitalPinToInterrupt(uint8_t ucPin);
 void attachInterrupt(uint8_t ucPin, GPIOINT_IrqCallbackPtr_t callback, int mode);
 void detachInterrupt(uint8_t ucPin);
 

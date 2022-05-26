@@ -168,6 +168,8 @@ void GPIO_ODD_IRQHandler(void)
   GPIOINT_IRQDispatcher(iflags);
 }
 
+uint8_t digitalPinToInterrupt(uint8_t ucPin) { return ucPin; }
+
 void attachInterrupt(uint8_t ucPin, GPIOINT_IrqCallbackPtr_t callback, int mode){
 	uint8_t pin = g_Pin2PortMapArray[ucPin].Pin_abstraction;
 	GPIOINT_CallbackRegister(pin, callback);
