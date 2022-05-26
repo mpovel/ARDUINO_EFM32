@@ -56,6 +56,9 @@ class SoftSPI {
     fastPinConfig(MosiPin, MOSI_MODE, !MODE_CPHA(Mode));
     fastPinConfig(SckPin, SCK_MODE, MODE_CPOL(Mode));
   }
+
+  void end(void);
+
   void setBitOrder(uint8_t bitOrder) {
 	this->msbfist = bitOrder;	  
   }
