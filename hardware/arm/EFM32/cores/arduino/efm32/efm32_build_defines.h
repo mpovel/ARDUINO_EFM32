@@ -212,6 +212,11 @@
   #define CMSIS_STARTUP_C   "SiliconLabs/EFM32TG/Source/GCC/startup_efm32tg.c"
   #define CMSIS_SYSTEM_C    "SiliconLabs/EFM32TG/Source/system_efm32tg.c"
   #define CHIP_PIN_LIST PIN(A,0),PIN(B,7),PIN(B,8),PIN(B,11),PIN(B,13),PIN(B,14),PIN(C,0),PIN(C,1),PIN(C,14),PIN(C,15),PIN(D,6),PIN(D,7),PIN(E,12),PIN(E,13),PIN(F,0),PIN(F,1),PIN(F,2)
+#elif defined(EFM32G200F128)||defined(EFM32G200F64)||defined(EFM32G200F32)
+  #define EFM32G  1  
+  #define CMSIS_STARTUP_C	"SiliconLabs/EFM32G/Source/GCC/startup_efm32g.c"
+  #define CMSIS_SYSTEM_C	"SiliconLabs/EFM32G/Source/system_efm32g.c"
+  #define CHIP_PIN_LIST PIN(A,0),PIN(A,1),PIN(A,2),PIN(B,7),PIN(B,8),PIN(B,11),PIN(B,13),PIN(B,14),PIN(C,0),PIN(C,1),PIN(C,13),PIN(C,14),PIN(C,15),PIN(D,4),PIN(D,5),PIN(D,6),PIN(D,7),PIN(E,10),PIN(E,11),PIN(E,12),PIN(E,13),PIN(F,0),PIN(F,1),PIN(F,2)
 #else 
   #error UNKNOWN CHIP 
 #endif

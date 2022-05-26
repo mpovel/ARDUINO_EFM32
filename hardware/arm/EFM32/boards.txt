@@ -11,6 +11,109 @@ menu.extern_lib=Extern lib
 menu.upload_method=Upload method
 menu.log=Debug Log_level
 
+
+########################    EFM32G200Fx    ###########################
+EFM32G200.name=EFM32G200Fx
+
+EFM32G200.build.core=arduino
+EFM32G200.build.series=EFM32G
+EFM32G200.build.variant=efm32G200f
+EFM32G200.build.board=efm32G200f128
+EFM32G200.build.mcu=cortex-m3 -mthumb
+#EFM32G200.build.spacil_includes="-I{build.core.path}/efm32" "-I{build.system.path}" "-I{build.system.path}/emlib/inc" "-I{build.system.path}/emlib/src"
+
+EFM32G200.menu.cpu.128=EFM32G200F128(128kFLASH 16kSRAM)
+EFM32G200.menu.cpu.128.build.board=efm32G200f128
+EFM32G200.menu.cpu.128.build.extra_flags=-DARM_MATH_CM3 -DEFM32G200F128 -DRAMSIZE={upload.maximum_data_size}
+EFM32G200.menu.cpu.128.build.ldscript=ld/efm32G200f128.ld
+EFM32G200.menu.cpu.128.upload.maximum_size=131072
+EFM32G200.menu.cpu.128.upload.maximum_data_size=16384
+
+EFM32G200.menu.cpu.64=EFM32G200F64(64kFLASH 16kSRAM)
+EFM32G200.menu.cpu.64.build.board=efm32G200f64
+EFM32G200.menu.cpu.64.build.extra_flags=-DARM_MATH_CM3 -DEFM32G200F64 -DRAMSIZE={upload.maximum_data_size}
+EFM32G200.menu.cpu.64.build.ldscript=ld/efm32G200f64.ld
+EFM32G200.menu.cpu.64.upload.maximum_size=65536
+EFM32G200.menu.cpu.64.upload.maximum_data_size=16384
+
+EFM32G200.menu.cpu.32=EFM32G200F32(32kFLASH 8kSRAM)
+EFM32G200.menu.cpu.32.build.board=efm32G200f32
+EFM32G200.menu.cpu.32.build.extra_flags=-DARM_MATH_CM3 -DEFM32G200F32 -DRAMSIZE={upload.maximum_data_size}
+EFM32G200.menu.cpu.32.build.ldscript=ld/efm32G200f32.ld
+EFM32G200.menu.cpu.32.upload.maximum_size=32768
+EFM32G200.menu.cpu.32.upload.maximum_data_size=8192
+
+
+EFM32G200.build.f_cpu=14000000L
+EFM32G200.menu.clock_source.hfrc28=HFRCO (28MHz)
+EFM32G200.menu.clock_source.hfrc28.build.osc=28000000L  -DUSE_HFRCO
+EFM32G200.menu.clock_source.hfrc28.build.f_cpu=28000000L -DOSC{build.osc}
+EFM32G200.menu.clock_source.hfrc21=HFRCO (21MHz)
+EFM32G200.menu.clock_source.hfrc21.build.osc=21000000L  -DUSE_HFRCO
+EFM32G200.menu.clock_source.hfrc21.build.f_cpu=21000000L -DOSC{build.osc}
+EFM32G200.menu.clock_source.hfrc14=HFRCO (14MHz)
+EFM32G200.menu.clock_source.hfrc14.build.osc=14000000L  -DUSE_HFRCO
+EFM32G200.menu.clock_source.hfrc14.build.f_cpu=14000000L -DOSC{build.osc}
+EFM32G200.menu.clock_source.hfrc11=HFRCO (11MHz)
+EFM32G200.menu.clock_source.hfrc11.build.osc=11000000L  -DUSE_HFRCO
+EFM32G200.menu.clock_source.hfrc11.build.f_cpu=11000000L -DOSC{build.osc}
+#EFM32G200.menu.clock_source.lfrc=LFRCO
+#EFM32G200.menu.clock_source.lfrc.build.osc=32768L -DUSE_LFRCO
+#EFM32G200.menu.clock_source.hfxo=HFXO (32M)
+#EFM32G200.menu.clock_source.hfxO.build.osc=32000000L -DUSE_HFXO
+#EFM32G200.menu.clock_source.Lfxo=LFXO
+#EFM32G200.menu.clock_source.LfxO.build.osc=32768L -DUSE_LFXO
+
+EFM32G200.menu.serial.leserial=LEUART0(0#PD4/5,1#PB13/14)
+EFM32G200.menu.serial.leserial.build.extra_flags_serial=-DMENU_SERIAL=SerialLEUART0
+EFM32G200.menu.serial.serial0=USART0(0#PE10/11,2#PC11/10) 
+EFM32G200.menu.serial.serial0.build.extra_flags_serial=-DMENU_SERIAL=SerialUSART0
+EFM32G200.menu.serial.serial1=USART1(0#PC0/1)
+EFM32G200.menu.serial.serial1.build.extra_flags_serial=-DMENU_SERIAL=SerialUSART1
+
+EFM32G200.build.vect=VECT_TAB_OFFSET=0x0000000
+EFM32G200.build.runin=FLASH
+EFM32G200.build.uploadadr=0x00000000
+
+#-------------------------------------- DEBUG & LOGLEVEL ---------------------------------------#
+EFM32G200.menu.log.default=Release(no-exceptions)
+EFM32G200.menu.log.default.build.log_level=-fno-exceptions
+EFM32G200.menu.log.Release=Release(exceptions)
+EFM32G200.menu.log.Release.build.log_level=
+EFM32G200.menu.log.fatal=FATAL
+EFM32G200.menu.log.fatal.build.log_level=-D__LOG_LEVEL=1 -DDEBUG_EFM
+EFM32G200.menu.log.error=ERROR
+EFM32G200.menu.log.error.build.log_level=-D__LOG_LEVEL=2 -DDEBUG_EFM
+EFM32G200.menu.log.warning=WARNING
+EFM32G200.menu.log.warning.build.log_level=-D__LOG_LEVEL=3 -DDEBUG_EFM
+EFM32G200.menu.log.info=INFO
+EFM32G200.menu.log.info.build.log_level=-D__LOG_LEVEL=4 -DDEBUG_EFM
+EFM32G200.menu.log.debug=DEBUG
+EFM32G200.menu.log.debug.build.log_level=-D__LOG_LEVEL=5 -DDEBUG_EFM
+EFM32G200.menu.log.trace=TRACE
+EFM32G200.menu.log.trace.build.log_level=-D__LOG_LEVEL=6 -DDEBUG_EFM
+
+EFM32G200.upload.file_type=bin
+EFM32G200.upload.params.quiet=no
+EFM32G200.upload.use_1200bps_touch=false
+#--------------------------UPLOAD METHODS------------------------------
+EFM32G200.upload.auto_reset=fauls
+
+# Upload choices
+EFM32G200.menu.upload_method.jLinkMethod=JLink
+EFM32G200.menu.upload_method.jLinkMethod.upload.tool=jlinkob_upload
+EFM32G200.menu.upload_method.jLinkMethod.upload.protocol=jlink
+EFM32G200.menu.upload_method.jLinkMethod.upload.device=EFM32G200F128
+
+EFM32G200.menu.upload_method.stLinkMethod=ST-Link
+EFM32G200.menu.upload_method.stLinkMethod.upload.tool=stlink_upload
+EFM32G200.menu.upload_method.stLinkMethod.upload.protocol=stlink-dap
+
+EFM32G200.menu.upload_method.serialMethod=Serial
+EFM32G200.menu.upload_method.serialMethod.upload.protocol=maple_serial
+EFM32G200.menu.upload_method.serialMethod.upload.tool=serial_upload
+
+
 ########################    EFM32G222Fx    ###########################
 EFM32G222.name=EFM32G222Fx
 
