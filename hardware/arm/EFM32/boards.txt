@@ -18,14 +18,14 @@ EFM32G200.name=EFM32G200Fx
 EFM32G200.build.core=arduino
 EFM32G200.build.series=EFM32G
 EFM32G200.build.variant=efm32G200f
-EFM32G200.build.board=efm32G200f128
+EFM32G200.build.board=efm32G210f128
 EFM32G200.build.mcu=cortex-m3 -mthumb
 #EFM32G200.build.spacil_includes="-I{build.core.path}/efm32" "-I{build.system.path}" "-I{build.system.path}/emlib/inc" "-I{build.system.path}/emlib/src"
 
-EFM32G200.menu.cpu.128=EFM32G200F128(128kFLASH 16kSRAM)
-EFM32G200.menu.cpu.128.build.board=efm32G200f128
-EFM32G200.menu.cpu.128.build.extra_flags=-DARM_MATH_CM3 -DEFM32G200F128 -DRAMSIZE={upload.maximum_data_size}
-EFM32G200.menu.cpu.128.build.ldscript=ld/efm32G200f128.ld
+EFM32G200.menu.cpu.128=EFM32G210F128(128kFLASH 16kSRAM)
+EFM32G200.menu.cpu.128.build.board=efm32G210f128
+EFM32G200.menu.cpu.128.build.extra_flags=-DARM_MATH_CM3 -DEFM32G210F128 -DRAMSIZE={upload.maximum_data_size}
+EFM32G200.menu.cpu.128.build.ldscript=ld/efm32G210f128.ld
 EFM32G200.menu.cpu.128.upload.maximum_size=131072
 EFM32G200.menu.cpu.128.upload.maximum_data_size=16384
 
@@ -43,6 +43,12 @@ EFM32G200.menu.cpu.32.build.ldscript=ld/efm32G200f32.ld
 EFM32G200.menu.cpu.32.upload.maximum_size=32768
 EFM32G200.menu.cpu.32.upload.maximum_data_size=8192
 
+EFM32G200.menu.cpu.16=EFM32G200F16(16kFLASH 8kSRAM)
+EFM32G200.menu.cpu.16.build.board=efm32G200f16
+EFM32G200.menu.cpu.16.build.extra_flags=-DARM_MATH_CM3 -DEFM32G200F16 -DRAMSIZE={upload.maximum_data_size}
+EFM32G200.menu.cpu.16.build.ldscript=ld/efm32G200f16.ld
+EFM32G200.menu.cpu.16.upload.maximum_size=16384
+EFM32G200.menu.cpu.16.upload.maximum_data_size=8192
 
 EFM32G200.build.f_cpu=14000000L
 EFM32G200.menu.clock_source.hfrc28=HFRCO (28MHz)
@@ -103,7 +109,7 @@ EFM32G200.upload.auto_reset=fauls
 EFM32G200.menu.upload_method.jLinkMethod=JLink
 EFM32G200.menu.upload_method.jLinkMethod.upload.tool=jlinkob_upload
 EFM32G200.menu.upload_method.jLinkMethod.upload.protocol=jlink
-EFM32G200.menu.upload_method.jLinkMethod.upload.device=EFM32G200F128
+EFM32G200.menu.upload_method.jLinkMethod.upload.device=EFM32G200F64
 
 EFM32G200.menu.upload_method.stLinkMethod=ST-Link
 EFM32G200.menu.upload_method.stLinkMethod.upload.tool=stlink_upload
