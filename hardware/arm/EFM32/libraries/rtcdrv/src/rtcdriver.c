@@ -327,6 +327,12 @@ Ecode_t RTCDRV_Init( void )
     return ECODE_EMDRV_RTCDRV_OK;
   }
   rtcdrvIsInitialized = true;
+#ifdef EMDRV_RTCDRV_USE_LFRCO
+  CMU_OscillatorEnable(cmuOsc_LFRCO, true, true);
+#else
+  CMU_OscillatorEnable(cmuOsc_LFXO, true, true);
+#endif
+
 
   // Ensure LE modules are clocked.
   CMU_ClockEnable( cmuClock_CORELE, true );
