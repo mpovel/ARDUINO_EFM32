@@ -18,6 +18,11 @@
 
 #include "arduino.h"
 
+/* Workaround for missing UART_ methods for EFM32G890 */
+#ifdef UART0
+#undef UART0
+#endif
+
 #if defined(USART0)&& (USE_USART0 >0)
 USART_Buf_TypeDef* USART0_buf = 0;
 #endif
