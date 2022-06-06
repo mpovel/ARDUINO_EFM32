@@ -221,7 +221,7 @@ void HardwareSerial::initSerialGpio(void) {
                     gpioModePushPull, 1);
 
     GPIO_PinModeSet((GPIO_Port_TypeDef)AF_UART0_RX_PORT(this->routeLoc),
-                    AF_USART5_RX_PIN(this->routeLoc),
+                    AF_USART0_RX_PIN(this->routeLoc),
                     gpioModeInputPull, 0);
 	buf->mode = UART_TYPE;
   }
