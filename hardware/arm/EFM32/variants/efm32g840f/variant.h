@@ -26,12 +26,16 @@
  #define LED_BUILTIN_MASK	0x01
 #endif
 
+#define A0  PD0
+#define A1  PD1
+#define A2  PD2
+#define A3  PD3
 #define A4  PD4
 #define A5  PD5
 #define A6  PD6
 #define A7  PD7
 
-#define Pin2AdcChannel(x) (((x) == A4)?4:(((x) == A5)?5:(((x) == A6)?6:(((x) == A7)?7:0xff))))
+#define Pin2AdcChannel(x) (((x) == A0)?0:(((x) == A1)?1:(((x) == A2)?2:(((x) == A3)?3:(((x) == A4)?4:(((x) == A5)?5:(((x) == A6)?6:(((x) == A7)?7:0xff))))))))
 
 #ifdef __cplusplus
 extern "C"{
@@ -76,11 +80,6 @@ extern const Pin2PortMapArray g_Pin2PortMapArray[] ;
 #define SPI_INTERFACES_COUNT 1
 
 #ifdef USE_SPI1
-   /**SPI1 GPIO Configuration    
-    PA5     ------> SPI1_SCK
-    PA6     ------> SPI1_MISO
-    PA7     ------> SPI1_MOSI 
-    */
  #define BOARD_SPI1_MOSI_PIN   (PE10)   
  #define BOARD_SPI1_MISO_PIN   (PE11)   
  #define BOARD_SPI1_SCK_PIN    (PE12)   

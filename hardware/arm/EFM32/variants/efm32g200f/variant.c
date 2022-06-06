@@ -13,10 +13,14 @@ void SystemClock_Config(void) {
 	CMU_HFRCOBandSet(cmuHFRCOBand_28MHz);
 # elif  F_CPU > 14000000L
 	CMU_HFRCOBandSet(cmuHFRCOBand_21MHz);
-# elif  F_CPU < 14000000L
-	CMU_HFRCOBandSet(cmuHFRCOBand_11MHz);
+# elif  F_CPU > 11000000L
+	CMU_HFRCOBandSet(cmuHFRCOBand_14MHz);
+# elif  F_CPU > 7000000L
+  CMU_HFRCOBandSet(cmuHFRCOBand_11MHz);
+# elif  F_CPU > 1000000L
+  CMU_HFRCOBandSet(cmuHFRCOBand_7MHz);
 # else	
-//	CMU_HFRCOBandSet(cmuHFRCOBand_14MHz); default 14M
+	CMU_HFRCOBandSet(cmuHFRCOBand_1MHz);
 # endif
 	/* Enable peripheral clock */
 	CMU_ClockEnable(cmuClock_HFPER, true);  
