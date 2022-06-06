@@ -1,3 +1,4 @@
+#Sloeber created workaound file V1.00.test 4
 # EFM32 Boards
 menu.cpu=Processor
 menu.startadr=Startup adr
@@ -11,6 +12,220 @@ menu.extern_lib=Extern lib
 menu.upload_method=Upload method
 menu.log=Debug Log_level
 
+########################    EFM32G890Fx    ###########################
+EFM32G890.name=EFM32G890Fx
+
+EFM32G890.build.core=arduino
+EFM32G890.build.series=EFM32G
+EFM32G890.build.variant=EFM32G890f
+EFM32G890.build.board=efm32G890f128
+EFM32G890.build.mcu=cortex-m3 -mthumb
+#EFM32G890.build.spacil_includes="-I{build.core.path}/efm32" "-I{build.system.path}" "-I{build.system.path}/emlib/inc" "-I{build.system.path}/emlib/src"
+
+EFM32G890.menu.cpu.128=EFM32G890F128(128kFLASH 16kSRAM)
+EFM32G890.menu.cpu.128.build.board=EFM32G890f128
+EFM32G890.menu.cpu.128.build.extra_flags=-DARM_MATH_CM3 -DEFM32G890F128 -DRAMSIZE={upload.maximum_data_size}
+EFM32G890.menu.cpu.128.build.ldscript=ld/EFM32G890f128.ld
+EFM32G890.menu.cpu.128.upload.maximum_size=131072
+EFM32G890.menu.cpu.128.upload.maximum_data_size=16384
+
+EFM32G890.menu.cpu.64=EFM32G890F64(64kFLASH 16kSRAM)
+EFM32G890.menu.cpu.64.build.board=EFM32G890f64
+EFM32G890.menu.cpu.64.build.extra_flags=-DARM_MATH_CM3 -DEFM32G890F64 -DRAMSIZE={upload.maximum_data_size}
+EFM32G890.menu.cpu.64.build.ldscript=ld/EFM32G890f64.ld
+EFM32G890.menu.cpu.64.upload.maximum_size=65536
+EFM32G890.menu.cpu.64.upload.maximum_data_size=16384
+
+EFM32G890.menu.cpu.32=EFM32G890F32(32kFLASH 8kSRAM)
+EFM32G890.menu.cpu.32.build.board=EFM32G890f32
+EFM32G890.menu.cpu.32.build.extra_flags=-DARM_MATH_CM3 -DEFM32G890F32 -DRAMSIZE={upload.maximum_data_size}
+EFM32G890.menu.cpu.32.build.ldscript=ld/EFM32G890f32.ld
+EFM32G890.menu.cpu.32.upload.maximum_size=32768
+EFM32G890.menu.cpu.32.upload.maximum_data_size=8192
+
+EFM32G890.build.f_cpu=14000000L
+EFM32G890.menu.clock_source.hfrc32=HFRCO (32MHz)
+EFM32G890.menu.clock_source.hfrc32.build.osc=32000000L  -DUSE_HFRCO
+EFM32G890.menu.clock_source.hfrc32.build.f_cpu=32000000L -DOSC{build.osc}
+EFM32G890.menu.clock_source.hfrc28=HFRCO (28MHz)
+EFM32G890.menu.clock_source.hfrc28.build.osc=28000000L  -DUSE_HFRCO
+EFM32G890.menu.clock_source.hfrc28.build.f_cpu=28000000L -DOSC{build.osc}
+EFM32G890.menu.clock_source.hfrc21=HFRCO (21MHz)
+EFM32G890.menu.clock_source.hfrc21.build.osc=21000000L  -DUSE_HFRCO
+EFM32G890.menu.clock_source.hfrc21.build.f_cpu=21000000L -DOSC{build.osc}
+EFM32G890.menu.clock_source.hfrc14=HFRCO (14MHz)
+EFM32G890.menu.clock_source.hfrc14.build.osc=14000000L  -DUSE_HFRCO
+EFM32G890.menu.clock_source.hfrc14.build.f_cpu=14000000L -DOSC{build.osc}
+EFM32G890.menu.clock_source.hfrc11=HFRCO (11MHz)
+EFM32G890.menu.clock_source.hfrc11.build.osc=11000000L  -DUSE_HFRCO
+EFM32G890.menu.clock_source.hfrc11.build.f_cpu=11000000L -DOSC{build.osc}
+EFM32G890.menu.clock_source.hfrc7=HFRCO (7MHz)
+EFM32G890.menu.clock_source.hfrc7.build.osc=7000000L  -DUSE_HFRCO
+EFM32G890.menu.clock_source.hfrc7.build.f_cpu=7000000L -DOSC{build.osc}
+EFM32G890.menu.clock_source.hfrc1=HFRCO (1MHz)
+EFM32G890.menu.clock_source.hfrc1.build.osc=1000000L  -DUSE_HFRCO
+EFM32G890.menu.clock_source.hfrc1.build.f_cpu=1000000L -DOSC{build.osc}
+#EFM32G890.menu.clock_source.lfrc=LFRCO
+#EFM32G890.menu.clock_source.lfrc.build.osc=32768L -DUSE_LFRCO
+#EFM32G890.menu.clock_source.hfxo=HFXO (32M)
+#EFM32G890.menu.clock_source.hfxO.build.osc=32000000L -DUSE_HFXO
+#EFM32G890.menu.clock_source.Lfxo=LFXO
+#EFM32G890.menu.clock_source.LfxO.build.osc=32768L -DUSE_LFXO
+
+EFM32G890.menu.serial.leserial=LEUART0(0#PD4/5,1#PB13/14)
+EFM32G890.menu.serial.leserial.build.extra_flags_serial=-DMENU_SERIAL=SerialLEUART0
+EFM32G890.menu.serial.serial0=USART0(0#PE10/11,2#PC11/10) 
+EFM32G890.menu.serial.serial0.build.extra_flags_serial=-DMENU_SERIAL=SerialUSART0
+EFM32G890.menu.serial.serial1=USART1(0#PC0/1)
+EFM32G890.menu.serial.serial1.build.extra_flags_serial=-DMENU_SERIAL=SerialUSART1
+
+EFM32G890.build.vect=VECT_TAB_OFFSET=0x0000000
+EFM32G890.build.runin=FLASH
+EFM32G890.build.uploadadr=0x00000000
+
+#-------------------------------------- DEBUG & LOGLEVEL ---------------------------------------#
+EFM32G890.menu.log.default=Release(no-exceptions)
+EFM32G890.menu.log.default.build.log_level=-fno-exceptions
+EFM32G890.menu.log.Release=Release(exceptions)
+EFM32G890.menu.log.Release.build.log_level=
+EFM32G890.menu.log.fatal=FATAL
+EFM32G890.menu.log.fatal.build.log_level=-D__LOG_LEVEL=1 -DDEBUG_EFM
+EFM32G890.menu.log.error=ERROR
+EFM32G890.menu.log.error.build.log_level=-D__LOG_LEVEL=2 -DDEBUG_EFM
+EFM32G890.menu.log.warning=WARNING
+EFM32G890.menu.log.warning.build.log_level=-D__LOG_LEVEL=3 -DDEBUG_EFM
+EFM32G890.menu.log.info=INFO
+EFM32G890.menu.log.info.build.log_level=-D__LOG_LEVEL=4 -DDEBUG_EFM
+EFM32G890.menu.log.debug=DEBUG
+EFM32G890.menu.log.debug.build.log_level=-D__LOG_LEVEL=5 -DDEBUG_EFM
+EFM32G890.menu.log.trace=TRACE
+EFM32G890.menu.log.trace.build.log_level=-D__LOG_LEVEL=6 -DDEBUG_EFM
+
+EFM32G890.upload.file_type=bin
+EFM32G890.upload.params.quiet=no
+EFM32G890.upload.use_1200bps_touch=false
+#--------------------------UPLOAD METHODS------------------------------
+EFM32G890.upload.auto_reset=fauls
+
+# Upload choices
+EFM32G890.menu.upload_method.jLinkMethod=JLink
+EFM32G890.menu.upload_method.jLinkMethod.upload.tool=jlinkob_upload
+EFM32G890.menu.upload_method.jLinkMethod.upload.protocol=jlink
+EFM32G890.menu.upload_method.jLinkMethod.upload.device=EFM32G890F64
+
+EFM32G890.menu.upload_method.stLinkMethod=ST-Link
+EFM32G890.menu.upload_method.stLinkMethod.upload.tool=stlink_upload
+EFM32G890.menu.upload_method.stLinkMethod.upload.protocol=stlink-dap
+
+EFM32G890.menu.upload_method.serialMethod=Serial
+EFM32G890.menu.upload_method.serialMethod.upload.protocol=maple_serial
+EFM32G890.menu.upload_method.serialMethod.upload.tool=serial_upload
+
+########################    EFM32G840Fx    ###########################
+EFM32G840.name=EFM32G840Fx
+
+EFM32G840.build.core=arduino
+EFM32G840.build.series=EFM32G
+EFM32G840.build.variant=EFM32G840f
+EFM32G840.build.board=efm32G840f128
+EFM32G840.build.mcu=cortex-m3 -mthumb
+#EFM32G840.build.spacil_includes="-I{build.core.path}/efm32" "-I{build.system.path}" "-I{build.system.path}/emlib/inc" "-I{build.system.path}/emlib/src"
+
+EFM32G840.menu.cpu.128=EFM32G840F128(128kFLASH 16kSRAM)
+EFM32G840.menu.cpu.128.build.board=efm32G840f128
+EFM32G840.menu.cpu.128.build.extra_flags=-DARM_MATH_CM3 -DEFM32G840F128 -DRAMSIZE={upload.maximum_data_size}
+EFM32G840.menu.cpu.128.build.ldscript=ld/efm32G840f128.ld
+EFM32G840.menu.cpu.128.upload.maximum_size=131072
+EFM32G840.menu.cpu.128.upload.maximum_data_size=16384
+
+EFM32G840.menu.cpu.64=EFM32G840F64(64kFLASH 16kSRAM)
+EFM32G840.menu.cpu.64.build.board=EFM32G840f64
+EFM32G840.menu.cpu.64.build.extra_flags=-DARM_MATH_CM3 -DEFM32G840F64 -DRAMSIZE={upload.maximum_data_size}
+EFM32G840.menu.cpu.64.build.ldscript=ld/EFM32G840f64.ld
+EFM32G840.menu.cpu.64.upload.maximum_size=65536
+EFM32G840.menu.cpu.64.upload.maximum_data_size=16384
+
+EFM32G840.menu.cpu.32=EFM32G840F32(32kFLASH 8kSRAM)
+EFM32G840.menu.cpu.32.build.board=EFM32G840f32
+EFM32G840.menu.cpu.32.build.extra_flags=-DARM_MATH_CM3 -DEFM32G840F32 -DRAMSIZE={upload.maximum_data_size}
+EFM32G840.menu.cpu.32.build.ldscript=ld/EFM32G840f32.ld
+EFM32G840.menu.cpu.32.upload.maximum_size=32768
+EFM32G840.menu.cpu.32.upload.maximum_data_size=8192
+
+EFM32G840.build.f_cpu=14000000L
+EFM32G840.menu.clock_source.hfrc28=HFRCO (28MHz)
+EFM32G840.menu.clock_source.hfrc28.build.osc=28000000L  -DUSE_HFRCO
+EFM32G840.menu.clock_source.hfrc28.build.f_cpu=28000000L -DOSC{build.osc}
+EFM32G840.menu.clock_source.hfrc21=HFRCO (21MHz)
+EFM32G840.menu.clock_source.hfrc21.build.osc=21000000L  -DUSE_HFRCO
+EFM32G840.menu.clock_source.hfrc21.build.f_cpu=21000000L -DOSC{build.osc}
+EFM32G840.menu.clock_source.hfrc14=HFRCO (14MHz)
+EFM32G840.menu.clock_source.hfrc14.build.osc=14000000L  -DUSE_HFRCO
+EFM32G840.menu.clock_source.hfrc14.build.f_cpu=14000000L -DOSC{build.osc}
+EFM32G840.menu.clock_source.hfrc11=HFRCO (11MHz)
+EFM32G840.menu.clock_source.hfrc11.build.osc=11000000L  -DUSE_HFRCO
+EFM32G840.menu.clock_source.hfrc11.build.f_cpu=11000000L -DOSC{build.osc}
+EFM32G840.menu.clock_source.hfrc7=HFRCO (7MHz)
+EFM32G840.menu.clock_source.hfrc7.build.osc=7000000L  -DUSE_HFRCO
+EFM32G840.menu.clock_source.hfrc7.build.f_cpu=7000000L -DOSC{build.osc}
+EFM32G840.menu.clock_source.hfrc1=HFRCO (1MHz)
+EFM32G840.menu.clock_source.hfrc1.build.osc=1000000L  -DUSE_HFRCO
+EFM32G840.menu.clock_source.hfrc1.build.f_cpu=1000000L -DOSC{build.osc}
+#EFM32G840.menu.clock_source.lfrc=LFRCO
+#EFM32G840.menu.clock_source.lfrc.build.osc=32768L -DUSE_LFRCO
+#EFM32G840.menu.clock_source.hfxo=HFXO (32M)
+#EFM32G840.menu.clock_source.hfxO.build.osc=32000000L -DUSE_HFXO
+#EFM32G840.menu.clock_source.Lfxo=LFXO
+#EFM32G840.menu.clock_source.LfxO.build.osc=32768L -DUSE_LFXO
+
+EFM32G840.menu.serial.leserial=LEUART0(0#PD4/5,1#PB13/14)
+EFM32G840.menu.serial.leserial.build.extra_flags_serial=-DMENU_SERIAL=SerialLEUART0
+EFM32G840.menu.serial.serial0=USART0(0#PE10/11,2#PC11/10) 
+EFM32G840.menu.serial.serial0.build.extra_flags_serial=-DMENU_SERIAL=SerialUSART0
+EFM32G840.menu.serial.serial1=USART1(0#PC0/1)
+EFM32G840.menu.serial.serial1.build.extra_flags_serial=-DMENU_SERIAL=SerialUSART1
+
+EFM32G840.build.vect=VECT_TAB_OFFSET=0x0000000
+EFM32G840.build.runin=FLASH
+EFM32G840.build.uploadadr=0x00000000
+
+#-------------------------------------- DEBUG & LOGLEVEL ---------------------------------------#
+EFM32G840.menu.log.default=Release(no-exceptions)
+EFM32G840.menu.log.default.build.log_level=-fno-exceptions
+EFM32G840.menu.log.Release=Release(exceptions)
+EFM32G840.menu.log.Release.build.log_level=
+EFM32G840.menu.log.fatal=FATAL
+EFM32G840.menu.log.fatal.build.log_level=-D__LOG_LEVEL=1 -DDEBUG_EFM
+EFM32G840.menu.log.error=ERROR
+EFM32G840.menu.log.error.build.log_level=-D__LOG_LEVEL=2 -DDEBUG_EFM
+EFM32G840.menu.log.warning=WARNING
+EFM32G840.menu.log.warning.build.log_level=-D__LOG_LEVEL=3 -DDEBUG_EFM
+EFM32G840.menu.log.info=INFO
+EFM32G840.menu.log.info.build.log_level=-D__LOG_LEVEL=4 -DDEBUG_EFM
+EFM32G840.menu.log.debug=DEBUG
+EFM32G840.menu.log.debug.build.log_level=-D__LOG_LEVEL=5 -DDEBUG_EFM
+EFM32G840.menu.log.trace=TRACE
+EFM32G840.menu.log.trace.build.log_level=-D__LOG_LEVEL=6 -DDEBUG_EFM
+
+EFM32G840.upload.file_type=bin
+EFM32G840.upload.params.quiet=no
+EFM32G840.upload.use_1200bps_touch=false
+#--------------------------UPLOAD METHODS------------------------------
+EFM32G840.upload.auto_reset=fauls
+
+# Upload choices
+EFM32G840.menu.upload_method.jLinkMethod=JLink
+EFM32G840.menu.upload_method.jLinkMethod.upload.tool=jlinkob_upload
+EFM32G840.menu.upload_method.jLinkMethod.upload.protocol=jlink
+EFM32G840.menu.upload_method.jLinkMethod.upload.device=EFM32G840F64
+
+EFM32G840.menu.upload_method.stLinkMethod=ST-Link
+EFM32G840.menu.upload_method.stLinkMethod.upload.tool=stlink_upload
+EFM32G840.menu.upload_method.stLinkMethod.upload.protocol=stlink-dap
+
+EFM32G840.menu.upload_method.serialMethod=Serial
+EFM32G840.menu.upload_method.serialMethod.upload.protocol=maple_serial
+EFM32G840.menu.upload_method.serialMethod.upload.tool=serial_upload
 
 ########################    EFM32G200Fx    ###########################
 EFM32G200.name=EFM32G200Fx
@@ -63,6 +278,12 @@ EFM32G200.menu.clock_source.hfrc14.build.f_cpu=14000000L -DOSC{build.osc}
 EFM32G200.menu.clock_source.hfrc11=HFRCO (11MHz)
 EFM32G200.menu.clock_source.hfrc11.build.osc=11000000L  -DUSE_HFRCO
 EFM32G200.menu.clock_source.hfrc11.build.f_cpu=11000000L -DOSC{build.osc}
+EFM32G200.menu.clock_source.hfrc7=HFRCO (7MHz)
+EFM32G200.menu.clock_source.hfrc7.build.osc=7000000L  -DUSE_HFRCO
+EFM32G200.menu.clock_source.hfrc7.build.f_cpu=7000000L -DOSC{build.osc}
+EFM32G200.menu.clock_source.hfrc1=HFRCO (1MHz)
+EFM32G200.menu.clock_source.hfrc1.build.osc=1000000L  -DUSE_HFRCO
+EFM32G200.menu.clock_source.hfrc1.build.f_cpu=1000000L -DOSC{build.osc}
 #EFM32G200.menu.clock_source.lfrc=LFRCO
 #EFM32G200.menu.clock_source.lfrc.build.osc=32768L -DUSE_LFRCO
 #EFM32G200.menu.clock_source.hfxo=HFXO (32M)
