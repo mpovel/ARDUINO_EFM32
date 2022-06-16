@@ -47,16 +47,6 @@
  * @brief Fast software SPI.
  */
 
-class SPISettings {
-  public:
-    SPISettings(uint32_t clock, uint8_t bitOrder, uint8_t dataMode): clock(clock), bitOrder(bitOrder), dataMode(dataMode) {};
-    SPISettings(): clock(0), bitOrder(0), dataMode(0) {};
-    //init(4000000, MSBFIRST, SPI_MODE0);
-
-    uint32_t clock;
-    uint8_t bitOrder;
-    uint8_t dataMode;
-};
 template<const int MosiPin, const int MisoPin, const int SckPin, const int Mode = 0>
 class SoftSPI {
  public:

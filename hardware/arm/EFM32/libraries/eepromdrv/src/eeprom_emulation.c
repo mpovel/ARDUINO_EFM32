@@ -379,7 +379,10 @@ bool EE_Init(uint32_t numberOfPages)
 {
   /* Make sure that the eeprom emulator is only initialized once. More that one
    * initialization may result in undefined behavior. */
-  EFM_ASSERT(!initialized);
+
+
+  //EFM_ASSERT(!initialized);
+  if (initialized) return true;
 
   initialized = true;
 

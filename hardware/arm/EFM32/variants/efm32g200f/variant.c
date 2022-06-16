@@ -23,7 +23,7 @@ void SystemClock_Config(void) {
 	CMU_HFRCOBandSet(cmuHFRCOBand_1MHz);
 # endif
 	/* Enable peripheral clock */
-	CMU_ClockEnable(cmuClock_HFPER, true);  
+	CMU_ClockEnable(cmuClock_HFPER, true);
 #else/*default mode*/
     enter_DefaultMode_from_RESET();        //2 or select internal High Frequency RC Clock
 #endif

@@ -32,7 +32,7 @@
 //#define EMDRV_RTCDRV_WALLCLOCK_CONFIG
 
 /// @brief Define to enable integration with SLEEP driver.
-//#define EMDRV_RTCDRV_SLEEPDRV_INTEGRATION
+// #define EMDRV_RTCDRV_SLEEPDRV_INTEGRATION
 
 /// @brief Define to let RTCDRV clock on LFRCO, default is LFXO.
 #define EMDRV_RTCDRV_USE_LFRCO

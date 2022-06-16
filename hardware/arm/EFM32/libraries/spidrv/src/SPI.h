@@ -6,7 +6,7 @@
 #ifdef __cplusplus   /*add arduino style class lib  by huaweiwx@sinq.com 2018.9.*/
 class SPISettings {
   public:
-#define SPI_MODE0
+//#define SPI_MODE0
     SPISettings(uint32_t clock, uint8_t bitOrder, uint8_t dataMode): clock(clock), bitOrder(bitOrder), dataMode(dataMode) {};
     SPISettings(): clock(0), bitOrder(0), dataMode(0) {};
     //init(4000000, MSBFIRST, SPI_MODE0);

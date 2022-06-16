@@ -176,13 +176,13 @@ void attachInterrupt(uint8_t ucPin, GPIOINT_IrqCallbackPtr_t callback, int mode)
 	GPIOINT_Init();
 	switch (mode){
 		case RISING:
-		  GPIO_IntConfig(g_Pin2PortMapArray[ucPin].GPIOx_Port, pin, true, 0, true);
+		  GPIO_ExtIntConfig(g_Pin2PortMapArray[ucPin].GPIOx_Port, pin, pin, true, 0, true);
 		  break;
 		case FALLING:  
-		  GPIO_IntConfig(g_Pin2PortMapArray[ucPin].GPIOx_Port, pin, 0, true, true);
+		  GPIO_ExtIntConfig(g_Pin2PortMapArray[ucPin].GPIOx_Port, pin, pin, 0, true, true);
 		  break;
 		case CHANGE:
-		  GPIO_IntConfig(g_Pin2PortMapArray[ucPin].GPIOx_Port, pin, true, true,true);
+		  GPIO_ExtIntConfig(g_Pin2PortMapArray[ucPin].GPIOx_Port, pin, pin, true, true,true);
 		  break;
 	}
 	GPIO_IntEnable(1<<pin);

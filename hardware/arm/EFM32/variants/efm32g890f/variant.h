@@ -78,9 +78,9 @@ extern const Pin2PortMapArray g_Pin2PortMapArray[] ;
 #define SPI_INTERFACES_COUNT 1
 
 #ifdef USE_SPI1
- #define BOARD_SPI1_MOSI_PIN   (PE10)   
- #define BOARD_SPI1_MISO_PIN   (PE11)   
- #define BOARD_SPI1_SCK_PIN    (PE12)  
+ #define BOARD_SPI1_MOSI_PIN   (PE10)
+ #define BOARD_SPI1_MISO_PIN   (PE11)
+ #define BOARD_SPI1_SCK_PIN    (PE12)
 
 #define MOSI BOARD_SPI1_MOSI_PIN
 #define MISO BOARD_SPI1_MISO_PIN
