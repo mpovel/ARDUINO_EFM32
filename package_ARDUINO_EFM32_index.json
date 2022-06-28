@@ -1,0 +1,98 @@
+{
+   "packages" : [
+      {
+         "maintainer" : "arduino_efm32",
+         "email" : "?",
+         "platforms" : [
+            {
+               "version" : "2022.06.28",
+               "name" : "EFM32(T)GxxxFxxx boards",
+               "boards" : [
+                  {
+                     "name" : "EFM32G200Fxxx"
+                  },
+                  {
+                     "name" : "EFM32G222Fxxx"
+                  },
+                  {
+                     "name" : "EFM32G840Fxxx"
+                  },
+                  {
+                     "name" : "EFM32G890Fxxx"
+                  },
+                  {
+                     "name" : "EFM32TG110Fxxx"
+                  }
+               ],
+               "size" : 42596608,
+               "checksum" : "SHA-256:8a0e3b4ff96aaaa464ebcfe6bc56bc60b314359a96c1f5776ee8b15eeaa93943",
+               "architecture" : "EFM32",
+               "toolsDependencies" : [
+                  {
+                     "version" : "2022.06.28",
+                     "name" : "efm32tools",
+                     "packager" : "arduino_efm32"
+                  },
+                  {
+                     "version" : "5.4.1-2016q2",
+                     "name" : "arm-none-eabi-gcc",
+                     "packager" : "arduino"
+                  }
+               ],
+               "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/ARDUINO_EFM32-2022.06.28.zip",
+               "category" : "EFM32",
+               "archiveFileName" : "ARDUINO_EFM32-2022.06.28.zip"
+            }
+         ],
+         "tools" : [
+            {
+               "systems" : [
+                  {
+                     "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/tools_win-2022.06.28.zip",
+                     "archiveFileName" : "tools_win-2022.06.28.zip",
+                     "size" : 571,
+                     "host" : "i686-mingw32"
+                  },
+                  {
+                     "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/tools_macosx-2022.06.28.zip",
+                     "archiveFileName" : "tools_macosx-2022.06.28.zip",
+                     "host" : "x86_64-apple-darwin",
+                     "size" : 571
+                  },
+                  {
+                     "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
+                 "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/tools_macosx-2022.06.28.zip",
+                     "archiveFileName" : "tools_macosx-2022.06.28.zip",
+                     "size" : 571,
+                     "host" : "i386-apple-darwin"
+                  },
+                  {
+                     "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/tools_linux64-2022.06.28.zip",
+                     "archiveFileName" : "tools_linux64-2022.06.28.zip",
+                     "host" : "x86_64-pc-linux-gnu",
+                     "size" : 571
+                  },
+                  {
+                     "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/tools_linux64-2022.06.28.zip",
+                     "archiveFileName" : "tools_linux64-2022.06.28.zip",
+                     "size" : 571,
+                     "host" : "i686-pc-linux-gnu"
+                  }
+               ],
+               "version" : "2022.06.28",
+               "name" : "efm32tools"
+            }
+         ],
+         "help" : {
+            "online" : "https://github.com/jp112sdl/ARDUINO_EFM32"
+         },
+         "websiteURL" : "https://github.com/jp112sdl/ARDUINO_EFM32",
+         "name" : "efm32duino"
+      }
+   ]
+}
+
