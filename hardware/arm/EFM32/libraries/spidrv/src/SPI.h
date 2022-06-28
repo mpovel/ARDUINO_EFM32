@@ -18,20 +18,28 @@ class SPISettings {
 
 
 class SPIClass {
+private:
+  SPIDRV_HandleData_t spidrvhandleData;
+  SPIDRV_Handle_t spidrvHandle = &spidrvhandleData;
 public:
+  SPIClass()  {}
+  virtual ~SPIClass () {}
   // Initialize the SPI library
-  Ecode_t  begin( SPIDRV_Handle_t handle, SPIDRV_Init_t *initData ){
-       return SPIDRV_Init(handle,initData);
+  Ecode_t  begin( SPIDRV_Init_t *initData ){
+       return SPIDRV_Init(spidrvHandle , initData);
   };
-  Ecode_t end( SPIDRV_Handle_t handle ){
-     return SPIDRV_DeInit(handle);
+  Ecode_t end(){
+     return SPIDRV_DeInit(spidrvHandle);
   };
 
   void beginTransaction(__attribute__((unused))  SPISettings settings) {
   }
 
   // Write to the SPI bus (MOSI pin) and also receive (MISO pin)
-  inline static uint8_t transfer(__attribute__((unused)) uint8_t data) { return 0;
+  inline uint8_t transfer(__attribute__((unused)) uint8_t data) {
+    uint8_t ret;
+     SPIDRV_MTransferSingleItemB(spidrvHandle, data, &ret);
+    return ret;
   }
   inline static uint16_t transfer16(__attribute__((unused)) uint16_t data) { return 0;
   }
