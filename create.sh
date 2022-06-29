@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -f package/*
 tar czf package/efm32tools_macosx-2022.6.29.tar.gz tools
 tar czf package/efm32tools_linux64-2022.6.29.tar.gz tools
 tar czf package/efm32tools_win-2022.6.29.tar.gz tools
