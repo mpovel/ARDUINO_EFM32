@@ -25,10 +25,10 @@
                   }
                ],
                "size" : 42645934,
-               "checksum" : "SHA-256:97012cf5be73e5005cdedfa2ba0550867932d7e49e300a94519782b3d342ccce",
+               "checksum" : "SHA-256:2d2dea9f8db23fbc3a2aedbbd1068aafa40a365da450bbd68f5a9ecd48713aaa",
                "architecture" : "EFM32",
-               "url" : "https://jp112sdl.github.io/ARDUINO_EFM32/ARDUINO_EFM32-2022.6.28.zip",
-               "archiveFileName" : "ARDUINO_EFM32-2022.6.28.zip",
+               "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/ARDUINO_EFM32-2022.6.29.tar.gz",
+               "archiveFileName" : "ARDUINO_EFM32-2022.6.29.tar.gz",
                "category" : "EFM32",
                "toolsDependencies" : [
                   {
@@ -50,37 +50,37 @@
                "version" : "2022.6.28",
                "systems" : [
                   {
-                     "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
-                     "url" : "https://jp112sdl.github.io/ARDUINO_EFM32/tools_win-2022.6.28.zip",
-                     "archiveFileName" : "tools_win-2022.6.28.zip",
+                     "checksum" : "SHA-256:a34fd0108f6dc4626a0a279eb06320a6e61c132e88192e9790c3b47547accc12",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/tools_win-2022.6.29.tar.gz",
+                     "archiveFileName" : "tools_win-2022.6.29.tar.gz",
                      "size" : 571,
                      "host" : "i686-mingw32"
                   },
                   {
-                     "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
-                     "url" : "https://jp112sdl.github.io/ARDUINO_EFM32/tools_macosx-2022.6.28.zip",
-                     "archiveFileName" : "tools_macosx-2022.6.28.zip",
+                     "checksum" : "SHA-256:a34fd0108f6dc4626a0a279eb06320a6e61c132e88192e9790c3b47547accc12",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/tools_macosx-2022.6.29.tar.gz",
+                     "archiveFileName" : "tools_macosx-2022.6.29.tar.gz",
                      "host" : "x86_64-apple-darwin",
                      "size" : 571
                   },
                   {
-                     "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
-                     "url" : "https://jp112sdl.github.io/ARDUINO_EFM32/tools_macosx-2022.6.28.zip",
-                     "archiveFileName" : "tools_macosx-2022.6.28.zip",
+                     "checksum" : "SHA-256:a34fd0108f6dc4626a0a279eb06320a6e61c132e88192e9790c3b47547accc12",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/tools_macosx-2022.6.29.tar.gz",
+                     "archiveFileName" : "tools_macosx-2022.6.29.tar.gz",
                      "size" : 571,
                      "host" : "i386-apple-darwin"
                   },
                   {
-                     "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
-                     "url" : "https://jp112sdl.github.io/ARDUINO_EFM32/tools_linux64-2022.6.28.zip",
-                     "archiveFileName" : "tools_linux64-2022.6.28.zip",
+                     "checksum" : "SHA-256:a34fd0108f6dc4626a0a279eb06320a6e61c132e88192e9790c3b47547accc12",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/tools_linux64-2022.6.29.tar.gz",
+                     "archiveFileName" : "tools_linux64-2022.6.29.tar.gz",
                      "host" : "x86_64-pc-linux-gnu",
                      "size" : 571
                   },
                   {
-                     "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
-                     "url" : "https://jp112sdl.github.io/ARDUINO_EFM32/tools_linux64-2022.6.28.zip",
-                     "archiveFileName" : "tools_linux64-2022.6.28.zip",
+                     "checksum" : "SHA-256:a34fd0108f6dc4626a0a279eb06320a6e61c132e88192e9790c3b47547accc12",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/tools_linux64-2022.6.29.tar.gz",
+                     "archiveFileName" : "tools_linux64-2022.6.29.tar.gz",
                      "size" : 571,
                      "host" : "i686-pc-linux-gnu"
                   }
