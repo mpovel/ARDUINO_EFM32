@@ -34,7 +34,7 @@
                   {
                      "version" : "2022.6.29",
                      "name" : "efm32tools",
-                     "packager" : "arduino_efm32"
+                     "packager" : "jp112sdl"
                   },
                   {
                      "version" : "7-2017q4",
@@ -91,7 +91,7 @@
             "online" : "https://github.com/jp112sdl/ARDUINO_EFM32"
          },
          "websiteURL" : "https://github.com/jp112sdl/ARDUINO_EFM32",
-         "name" : "arduino_efm32"
+         "name" : "jp112sdl"
       }
    ]
 }
