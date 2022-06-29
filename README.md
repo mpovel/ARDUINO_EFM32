@@ -4,7 +4,8 @@ Generic implementation of Arduino for EFM32 boards using Silabs Gecko_SDK.
 ## Installation - using Arduino IDE Board Support
 1. add `https://raw.githubusercontent.com/jp112sdl/ARDUINO_EFM32/master/package/package_ARDUINO_EFM32_index.json` to additional board urls.
 2. look for EFM32 boards
-<img width="802" alt="Bildschirmfoto 2022-06-28 um 09 50 32" src="https://user-images.githubusercontent.com/18190139/176124070-10e42e1f-1ffa-46c7-828e-ffb2e9fc95dc.png">
+<img width="796" alt="Bildschirmfoto 2022-06-29 um 20 04 25" src="https://user-images.githubusercontent.com/18190139/176505449-402423ab-a81f-4367-844a-8843495aff68.png">
+
 
 
 ## Installation - Developers
