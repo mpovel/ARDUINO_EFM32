@@ -51,7 +51,7 @@
                "systems" : [
                   {
                      "checksum" : "SHA-256:eea963752087325e8221af0685ef71213aba0b9b3c59dd093aafd9b03293736a",
-                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/tools_win-2022.06.28.zip",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/tools_win-2022.6.28.zip",
                      "archiveFileName" : "tools_win-2022.6.28.zip",
                      "size" : 571,
                      "host" : "i686-mingw32"
