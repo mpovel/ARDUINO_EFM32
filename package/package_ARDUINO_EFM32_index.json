@@ -37,10 +37,15 @@
                      "packager" : "jp112sdl"
                   },
                   {
+                     "packager": "arduino",
+                     "name": "openocd",
+                     "version": "0.11.0-arduino2"
+                   },
+                   {
                      "version" : "7-2017q4",
                      "name" : "arm-none-eabi-gcc",
                      "packager" : "arduino"
-                  }
+                   }
                ]
             }
          ],
