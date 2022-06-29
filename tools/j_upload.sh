@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/local/bin/openocd -f interface/jlink.cfg -f target/efm32.cfg -c "program $1 verify reset exit"
+$1/bin/openocd -f interface/jlink.cfg -f target/efm32.cfg -c "program $2 verify reset exit"

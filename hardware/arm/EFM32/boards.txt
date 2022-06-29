@@ -113,9 +113,8 @@ EFM32G890.menu.upload_method.jLinkMethod.upload.tool=jlinkob_upload
 EFM32G890.menu.upload_method.jLinkMethod.upload.protocol=jlink
 EFM32G890.menu.upload_method.jLinkMethod.upload.device=EFM32G890F64
 
-EFM32G890.menu.upload_method.stLinkMethod=ST-Link
+EFM32G890.menu.upload_method.stLinkMethod=ST-Link (OpenOCD)
 EFM32G890.menu.upload_method.stLinkMethod.upload.tool=stlink_upload
-EFM32G890.menu.upload_method.stLinkMethod.upload.protocol=stlink-dap
 
 EFM32G890.menu.upload_method.serialMethod=Serial
 EFM32G890.menu.upload_method.serialMethod.upload.protocol=maple_serial
@@ -219,9 +218,8 @@ EFM32G840.menu.upload_method.jLinkMethod.upload.tool=jlinkob_upload
 EFM32G840.menu.upload_method.jLinkMethod.upload.protocol=jlink
 EFM32G840.menu.upload_method.jLinkMethod.upload.device=EFM32G840F64
 
-EFM32G840.menu.upload_method.stLinkMethod=ST-Link
+EFM32G840.menu.upload_method.stLinkMethod=ST-Link (OpenOCD)
 EFM32G840.menu.upload_method.stLinkMethod.upload.tool=stlink_upload
-EFM32G840.menu.upload_method.stLinkMethod.upload.protocol=stlink-dap
 
 EFM32G840.menu.upload_method.serialMethod=Serial
 EFM32G840.menu.upload_method.serialMethod.upload.protocol=maple_serial
@@ -332,7 +330,7 @@ EFM32G200.menu.upload_method.jLinkMethod.upload.tool=jlinkob_upload
 EFM32G200.menu.upload_method.jLinkMethod.upload.protocol=jlink
 EFM32G200.menu.upload_method.jLinkMethod.upload.device=EFM32G200F64
 
-EFM32G200.menu.upload_method.stLinkMethod=ST-Link
+EFM32G200.menu.upload_method.stLinkMethod=ST-Link (OpenOCD)
 EFM32G200.menu.upload_method.stLinkMethod.upload.tool=stlink_upload
 EFM32G200.menu.upload_method.stLinkMethod.upload.protocol=stlink-dap
 

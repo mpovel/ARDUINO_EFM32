@@ -1,0 +1,103 @@
+{
+   "packages" : [
+      {
+         "maintainer" : "jp112sdl",
+         "email" : "?",
+         "platforms" : [
+            {
+               "version" : "2022.6.29",
+               "name" : "EFM32(T)Gxxx boards",
+               "boards" : [
+                  {
+                     "name" : "EFM32G200"
+                  },
+                  {
+                     "name" : "EFM32G222"
+                  },
+                  {
+                     "name" : "EFM32G840"
+                  },
+                  {
+                     "name" : "EFM32G890"
+                  },
+                  {
+                     "name" : "EFM32TG110"
+                  }
+               ],
+               "size" : 42645934,
+               "checksum" : "SHA-256:ARDUINO_EFM32-2022.6.29_SUM",
+               "architecture" : "EFM32",
+               "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/ARDUINO_EFM32-2022.6.29.tar.gz",
+               "archiveFileName" : "ARDUINO_EFM32-2022.6.29.tar.gz",
+               "category" : "EFM32",
+               "toolsDependencies" : [
+                  {
+                     "version" : "2022.6.29",
+                     "name" : "efm32tools",
+                     "packager" : "jp112sdl"
+                  },
+                  {
+                     "packager": "arduino",
+                     "name": "openocd",
+                     "version": "0.11.0-arduino2"
+                   },
+                   {
+                     "version" : "7-2017q4",
+                     "name" : "arm-none-eabi-gcc",
+                     "packager" : "arduino"
+                   }
+               ]
+            }
+         ],
+         "tools" : [
+            {
+               "name" : "efm32tools",
+               "version" : "2022.6.29",
+               "systems" : [
+                  {
+                     "checksum" : "SHA-256:efm32tools_win-2022.6.29_sum",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/efm32tools_win-2022.6.29.tar.gz",
+                     "archiveFileName" : "efm32tools_win-2022.6.29.tar.gz",
+                     "size" : 571,
+                     "host" : "i686-mingw32"
+                  },
+                  {
+                     "checksum" : "SHA-256:efm32tools_macosx-2022.6.29_sum",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/efm32tools_macosx-2022.6.29.tar.gz",
+                     "archiveFileName" : "efm32tools_macosx-2022.6.29.tar.gz",
+                     "host" : "x86_64-apple-darwin",
+                     "size" : 571
+                  },
+                  {
+                     "checksum" : "SHA-256:efm32tools_macosx-2022.6.29_sum",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/efm32tools_macosx-2022.6.29.tar.gz",
+                     "archiveFileName" : "efm32tools_macosx-2022.6.29.tar.gz",
+                     "size" : 571,
+                     "host" : "i386-apple-darwin"
+                  },
+                  {
+                     "checksum" : "SHA-256:efm32tools_linux64-2022.6.29_sum",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/efm32tools_linux64-2022.6.29.tar.gz",
+                     "archiveFileName" : "efm32tools_linux64-2022.6.29.tar.gz",
+                     "host" : "x86_64-pc-linux-gnu",
+                     "size" : 571
+                  },
+                  {
+                     "checksum" : "SHA-256:efm32tools_linux64-2022.6.29_sum",
+                     "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/efm32tools_linux64-2022.6.29.tar.gz",
+                     "archiveFileName" : "efm32tools_linux64-2022.6.29.tar.gz",
+                     "size" : 571,
+                     "host" : "i686-pc-linux-gnu"
+                  }
+               ]
+            }
+         ],
+         "help" : {
+            "online" : "https://github.com/jp112sdl/ARDUINO_EFM32"
+         },
+         "websiteURL" : "https://github.com/jp112sdl/ARDUINO_EFM32",
+         "name" : "jp112sdl"
+      }
+   ]
+}
+

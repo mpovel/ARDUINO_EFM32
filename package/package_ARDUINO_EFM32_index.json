@@ -25,7 +25,7 @@
                   }
                ],
                "size" : 42645934,
-               "checksum" : "SHA-256:1811535184d7f2afd51e6c8e423a95eb5fa20885e838bf1146059a895f3a2331",
+                     "checksum" : "SHA-256:fe1c17cc59bac8e0430038f1a8f082bd954158244142b951b37019de0b3eac43",
                "architecture" : "EFM32",
                "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/ARDUINO_EFM32-2022.6.29.tar.gz",
                "archiveFileName" : "ARDUINO_EFM32-2022.6.29.tar.gz",
@@ -55,35 +55,35 @@
                "version" : "2022.6.29",
                "systems" : [
                   {
-                     "checksum" : "SHA-256:12d3345543c3652dc013e8bd1a37e83745f1b692b9cf48965ef837a191a7ae75",
+                     "checksum" : "SHA-256:08937d8ff743f05ea0e13bfb9cceb667b3e740d0fe66c04cf0adb3293eb2f293",
                      "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/efm32tools_win-2022.6.29.tar.gz",
                      "archiveFileName" : "efm32tools_win-2022.6.29.tar.gz",
                      "size" : 571,
                      "host" : "i686-mingw32"
                   },
                   {
-                     "checksum" : "SHA-256:12d3345543c3652dc013e8bd1a37e83745f1b692b9cf48965ef837a191a7ae75",
+                     "checksum" : "SHA-256:1dfdc456aa6901eec26adee5cc7e809bcc71d0987c6dd17d8f3af742d93f5904",
                      "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/efm32tools_macosx-2022.6.29.tar.gz",
                      "archiveFileName" : "efm32tools_macosx-2022.6.29.tar.gz",
                      "host" : "x86_64-apple-darwin",
                      "size" : 571
                   },
                   {
-                     "checksum" : "SHA-256:12d3345543c3652dc013e8bd1a37e83745f1b692b9cf48965ef837a191a7ae75",
+                     "checksum" : "SHA-256:1dfdc456aa6901eec26adee5cc7e809bcc71d0987c6dd17d8f3af742d93f5904",
                      "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/efm32tools_macosx-2022.6.29.tar.gz",
                      "archiveFileName" : "efm32tools_macosx-2022.6.29.tar.gz",
                      "size" : 571,
                      "host" : "i386-apple-darwin"
                   },
                   {
-                     "checksum" : "SHA-256:12d3345543c3652dc013e8bd1a37e83745f1b692b9cf48965ef837a191a7ae75",
+                     "checksum" : "SHA-256:1dfdc456aa6901eec26adee5cc7e809bcc71d0987c6dd17d8f3af742d93f5904",
                      "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/efm32tools_linux64-2022.6.29.tar.gz",
                      "archiveFileName" : "efm32tools_linux64-2022.6.29.tar.gz",
                      "host" : "x86_64-pc-linux-gnu",
                      "size" : 571
                   },
                   {
-                     "checksum" : "SHA-256:12d3345543c3652dc013e8bd1a37e83745f1b692b9cf48965ef837a191a7ae75",
+                     "checksum" : "SHA-256:1dfdc456aa6901eec26adee5cc7e809bcc71d0987c6dd17d8f3af742d93f5904",
                      "url" : "https://github.com/jp112sdl/ARDUINO_EFM32/raw/master/package/efm32tools_linux64-2022.6.29.tar.gz",
                      "archiveFileName" : "efm32tools_linux64-2022.6.29.tar.gz",
                      "size" : 571,
