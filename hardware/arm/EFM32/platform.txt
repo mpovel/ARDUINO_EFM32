@@ -5,7 +5,7 @@
 # For more info:
 # https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
 
-name=EFM32(T)GxxxFxxx boards
+name=EFM32(T)Gxxx boards
 version=1.8.5
 
 # STM compile variables
@@ -161,7 +161,7 @@ tools.jlink_upload.upload.params.quiet=
 tools.jlink_upload.upload.pattern="{path}/{cmd}" {serial.port.file} {upload.altID} {upload.usbID} "{build.path}/{build.project_name}.hex" {upload.device} {build.uploadadr} {build.vect} 
 
 # STLINK upload
-tools.stlink_upload.cmd=/Users/pechj/st_upload.sh
+tools.stlink_upload.cmd=st_upload.sh
 tools.stlink_upload.upload.params.verbose=
 tools.stlink_upload.upload.params.quiet=
 tools.stlink_upload.upload.pattern="{cmd}" "{build.path}/{build.project_name}.elf"
