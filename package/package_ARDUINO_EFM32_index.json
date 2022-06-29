@@ -5,7 +5,7 @@
          "email" : "?",
          "platforms" : [
             {
-               "version" : "2022.6.28",
+               "version" : "2022.6.29",
                "name" : "EFM32(T)Gxxx boards",
                "boards" : [
                   {
@@ -32,7 +32,7 @@
                "category" : "EFM32",
                "toolsDependencies" : [
                   {
-                     "version" : "2022.6.28",
+                     "version" : "2022.6.29",
                      "name" : "efm32tools",
                      "packager" : "arduino_efm32"
                   },
@@ -47,7 +47,7 @@
          "tools" : [
             {
                "name" : "efm32tools",
-               "version" : "2022.6.28",
+               "version" : "2022.6.29",
                "systems" : [
                   {
                      "checksum" : "SHA-256:a34fd0108f6dc4626a0a279eb06320a6e61c132e88192e9790c3b47547accc12",
