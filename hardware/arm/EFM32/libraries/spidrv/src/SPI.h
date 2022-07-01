@@ -36,14 +36,26 @@ public:
   }
 
   // Write to the SPI bus (MOSI pin) and also receive (MISO pin)
-  inline uint8_t transfer(__attribute__((unused)) uint8_t data) {
+  inline uint8_t transfer(uint8_t data) {
     uint8_t ret;
-     SPIDRV_MTransferSingleItemB(spidrvHandle, data, &ret);
+    SPIDRV_MTransferSingleItemB(spidrvHandle, data, &ret);
     return ret;
   }
   inline static uint16_t transfer16(__attribute__((unused)) uint16_t data) { return 0;
   }
   inline static void transfer(__attribute__((unused)) void *buf, __attribute__((unused)) size_t count) {
+  }
+  // Write and read multiple bytes (blocking)
+  inline void transfer(void *bufTx, void *bufRx, size_t count) {
+    SPIDRV_MTransferB(spidrvHandle, bufTx, bufRx, count);
+  }
+  // Read multiple bytes (blocking)
+  inline void receive(void *bufRx, size_t count) {
+    SPIDRV_MReceiveB(spidrvHandle, bufRx, count);
+  }
+  // Write multiple bytes (blocking)
+  inline void transmit(void *bufTx, size_t count) {
+    SPIDRV_MTransmitB(spidrvHandle, bufTx, count);
   }
   // After performing a group of transfers and releasing the chip select
   // signal, this function allows others to access the SPI bus
