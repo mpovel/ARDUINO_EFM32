@@ -204,27 +204,27 @@
 
 #elif defined(EFM32G222F128)||defined(EFM32G222F64)||defined(EFM32G222F32)
   #define EFM32G  1  
-  #define CMSIS_STARTUP_C	"SiliconLabs/EFM32G/Source/GCC/startup_efm32g.c"
+  #define CMSIS_STARTUP_C	"SiliconLabs/EFM32G/Source/startup_efm32g.c"
   #define CMSIS_SYSTEM_C	"SiliconLabs/EFM32G/Source/system_efm32g.c"
   #define CHIP_PIN_LIST PIN(A,0),PIN(A,1),PIN(A,2),PIN(A,8),PIN(A,9),PIN(A,10),PIN(B,7),PIN(B,8),PIN(B,11),PIN(B,13),PIN(B,14),PIN(C,0),PIN(C,1),PIN(C,2),PIN(C,3),PIN(C,4),PIN(C,8),PIN(C,9),PIN(C,10),PIN(C,11),PIN(C,13),PIN(C,14),PIN(C,15),PIN(D,4),PIN(D,5),PIN(D,6),PIN(D,7),PIN(E,10),PIN(E,11),PIN(E,12),PIN(E,13),PIN(F,0),PIN(F,1),PIN(F,2),PIN(F,3),PIN(F,4),PIN(F,5)
 #elif defined(EFM32TG110F32)||defined(EFM32TG110F16)
   #define EFM32TG  1  
-  #define CMSIS_STARTUP_C   "SiliconLabs/EFM32TG/Source/GCC/startup_efm32tg.c"
+  #define CMSIS_STARTUP_C   "SiliconLabs/EFM32TG/Source/startup_efm32tg.c"
   #define CMSIS_SYSTEM_C    "SiliconLabs/EFM32TG/Source/system_efm32tg.c"
   #define CHIP_PIN_LIST PIN(A,0),PIN(B,7),PIN(B,8),PIN(B,11),PIN(B,13),PIN(B,14),PIN(C,0),PIN(C,1),PIN(C,14),PIN(C,15),PIN(D,6),PIN(D,7),PIN(E,12),PIN(E,13),PIN(F,0),PIN(F,1),PIN(F,2)
 #elif defined(EFM32G210F128)||defined(EFM32G200F64)||defined(EFM32G200F32)||defined(EFM32G200F16)
   #define EFM32G  1  
-  #define CMSIS_STARTUP_C	"SiliconLabs/EFM32G/Source/GCC/startup_efm32g.c"
+  #define CMSIS_STARTUP_C	"SiliconLabs/EFM32G/Source/startup_efm32g.c"
   #define CMSIS_SYSTEM_C	"SiliconLabs/EFM32G/Source/system_efm32g.c"
   #define CHIP_PIN_LIST PIN(A,0),PIN(A,1),PIN(A,2),PIN(B,7),PIN(B,8),PIN(B,11),PIN(B,13),PIN(B,14),PIN(C,0),PIN(C,1),PIN(C,13),PIN(C,14),PIN(C,15),PIN(D,4),PIN(D,5),PIN(D,6),PIN(D,7),PIN(E,10),PIN(E,11),PIN(E,12),PIN(E,13),PIN(F,0),PIN(F,1),PIN(F,2)
 #elif defined(EFM32G840F128)||defined(EFM32G840F64)||defined(EFM32G840F32)
   #define EFM32G  1  
-  #define CMSIS_STARTUP_C	"SiliconLabs/EFM32G/Source/GCC/startup_efm32g.c"
+  #define CMSIS_STARTUP_C	"SiliconLabs/EFM32G/Source/startup_efm32g.c"
   #define CMSIS_SYSTEM_C	"SiliconLabs/EFM32G/Source/system_efm32g.c"
   #define CHIP_PIN_LIST PIN(A,0),PIN(A,1),PIN(A,2),PIN(A,3),PIN(A,4),PIN(A,5),PIN(A,6),PIN(A,12),PIN(A,13),PIN(A,14),PIN(A,15),PIN(B,3),PIN(B,4),PIN(B,5),PIN(B,6),PIN(B,7),PIN(B,8),PIN(B,11),PIN(B,12),PIN(B,13),PIN(B,14),PIN(C,4),PIN(C,5),PIN(C,6),PIN(C,7),PIN(C,12),PIN(C,13),PIN(C,14),PIN(C,15),PIN(D,0),PIN(D,1),PIN(D,2),PIN(D,3),PIN(D,4),PIN(D,5),PIN(D,6),PIN(D,7),PIN(D,8),PIN(E,4),PIN(E,5),PIN(E,6),PIN(E,7),PIN(E,8),PIN(E,9),PIN(E,10),PIN(E,11),PIN(E,12),PIN(E,13),PIN(E,14),PIN(E,15),PIN(F,0),PIN(F,1),PIN(F,2),PIN(F,3),PIN(F,4),PIN(F,5)
 #elif defined(EFM32G890F128)||defined(EFM32G890F64)||defined(EFM32G890F32)
   #define EFM32G  1  
-  #define CMSIS_STARTUP_C	"SiliconLabs/EFM32G/Source/GCC/startup_efm32g.c"
+  #define CMSIS_STARTUP_C	"SiliconLabs/EFM32G/Source/startup_efm32g.c"
   #define CMSIS_SYSTEM_C	"SiliconLabs/EFM32G/Source/system_efm32g.c"
   #define CHIP_PIN_LIST PIN(A,0),PIN(A,1),PIN(A,2),PIN(A,3),PIN(A,4),PIN(A,5),PIN(A,6),PIN(A,7),PIN(A,8),PIN(A,9),PIN(A,10),PIN(A,11),PIN(A,12),PIN(A,13),PIN(A,14),PIN(A,15),PIN(B,0),PIN(B,1),PIN(B,2),PIN(B,3),PIN(B,4),PIN(B,5),PIN(B,6),PIN(B,7),PIN(B,8),PIN(B,9),PIN(B,10),PIN(B,11),PIN(B,12),PIN(B,13),PIN(B,14),PIN(B,15),PIN(C,0),PIN(C,1),PIN(C,2),PIN(C,3),PIN(C,4),PIN(C,5),PIN(C,6),PIN(C,7),PIN(C,8),PIN(C,9),PIN(C,10),PIN(C,11),PIN(C,12),PIN(C,13),PIN(C,14),PIN(C,15),PIN(D,0),PIN(D,1),PIN(D,2),PIN(D,3),PIN(D,4),PIN(D,5),PIN(D,6),PIN(D,7),PIN(D,8),PIN(D,9),PIN(D,10),PIN(D,11),PIN(D,12),PIN(D,13),PIN(D,14),PIN(D,15),PIN(E,0),PIN(E,1),PIN(E,2),PIN(E,3),PIN(E,4),PIN(E,5),PIN(E,6),PIN(E,7),PIN(E,8),PIN(E,9),PIN(E,10),PIN(E,11),PIN(E,12),PIN(E,13),PIN(E,14),PIN(E,15),PIN(F,0),PIN(F,1),PIN(F,2),PIN(F,3),PIN(F,4),PIN(F,5),PIN(F,6),PIN(F,7),PIN(F,8),PIN(F,9)
 #else 

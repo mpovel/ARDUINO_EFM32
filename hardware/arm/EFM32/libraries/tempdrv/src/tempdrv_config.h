@@ -1,64 +1,67 @@
 /***************************************************************************//**
- * @file tempdrv_config.h
+ * @file
  * @brief TEMPDRV configuration file.
- * @version 5.1.2
  *******************************************************************************
- * @section License
- * <b>(C) Copyright 2014 Silicon Labs, http://www.silabs.com</b>
+ * # License
+ * <b>Copyright 2018 Silicon Laboratories Inc. www.silabs.com</b>
  *******************************************************************************
+ *
+ * SPDX-License-Identifier: Zlib
+ *
+ * The licensor of this software is Silicon Laboratories Inc.
+ *
+ * This software is provided 'as-is', without any express or implied
+ * warranty. In no event will the authors be held liable for any damages
+ * arising from the use of this software.
  *
  * Permission is granted to anyone to use this software for any purpose,
  * including commercial applications, and to alter it and redistribute it
  * freely, subject to the following restrictions:
  *
  * 1. The origin of this software must not be misrepresented; you must not
- *    claim that you wrote the original software.
+ *    claim that you wrote the original software. If you use this software
+ *    in a product, an acknowledgment in the product documentation would be
+ *    appreciated but is not required.
  * 2. Altered source versions must be plainly marked as such, and must not be
  *    misrepresented as being the original software.
  * 3. This notice may not be removed or altered from any source distribution.
- *
- * DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Silicon Labs has no
- * obligation to support this Software. Silicon Labs is providing the
- * Software "AS IS", with no express or implied warranties of any kind,
- * including, but not limited to, any implied warranties of merchantability
- * or fitness for any particular purpose or warranties against infringement
- * of any proprietary rights of a third party.
- *
- * Silicon Labs will not be liable for any consequential, incidental, or
- * special damages, or any other relief, or for any claim by any third party,
- * arising from your use of this Software.
  *
  ******************************************************************************/
 #ifndef __SILICON_LABS_TEMPDRV_CONFIG_H__
 #define __SILICON_LABS_TEMPDRV_CONFIG_H__
 
 /***************************************************************************//**
- * @addtogroup emdrv
+ * @addtogroup tempdrv
  * @{
  ******************************************************************************/
 
-/***************************************************************************//**
- * @addtogroup TEMPDRV
- * @{
- ******************************************************************************/
+// <<< Use Configuration Wizard in Context Menu >>>
 
-// Callback table depth (for high and low callbacks each)
+// <h>Temperature Driver Configuration
+
 #ifndef TEMPDRV_CUSTOM_CALLBACK_DEPTH
+// <o TEMPDRV_CUSTOM_CALLBACK_DEPTH> Callback table depth (for high and low callbacks each)
+// <i> Default: 5
 #define TEMPDRV_CUSTOM_CALLBACK_DEPTH 5
 #endif
 
-// Allow temperature sensor to wake the device up from EM4
 #ifndef TEMPDRV_EM4WAKEUP
-#define TEMPDRV_EM4WAKEUP false
+// <q TEMPDRV_EM4WAKEUP> Allow temperature sensor to wake the device up from EM4
+// <i> Default: 0
+#define TEMPDRV_EM4WAKEUP 0
 #endif
 
-// Allow TEMPDRV to define the EMU_IRQ_Handler. Enable if EMU_IRQ_Handler is
-// defined elsewhere.
 #ifndef EMU_CUSTOM_IRQ_HANDLER
-#define EMU_CUSTOM_IRQ_HANDLER false
+// <q EMU_CUSTOM_IRQ_HANDLER> Allow EMU_IRQ_Handler to be defined
+// <i> elsewhere than in temperature driver.
+// <i> Default: 0
+#define EMU_CUSTOM_IRQ_HANDLER 0
 #endif
 
-/** @} (end addtogroup TEMPDRV) */
-/** @} (end addtogroup emdrv) */
+// </h>
+
+// <<< end of configuration section >>>
+
+/** @} (end addtogroup tempdrv) */
 
 #endif /* __SILICON_LABS_TEMPDRV_CONFIG_H__ */

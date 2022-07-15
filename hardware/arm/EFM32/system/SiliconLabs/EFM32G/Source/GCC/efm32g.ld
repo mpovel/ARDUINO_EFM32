@@ -1,13 +1,32 @@
-/* Linker script for Silicon Labs EFM32G devices                      */
-/*                                                                     */
-/* This file is subject to the license terms as defined in ARM's       */
-/* CMSIS END USER LICENSE AGREEMENT.pdf, governing the use of          */
-/* Example Code.                                                       */
-/*                                                                     */
-/* Copyright 2017 Silicon Laboratories, Inc. http://www.silabs.com     */
-/*                                                                     */
-/* Version 5.1.2 */
-/*                                                                     */
+/***************************************************************************//**
+ * Linker script for Silicon Labs EFM32G devices
+ *******************************************************************************
+ * # License
+ * <b>Copyright 2022 Silicon Laboratories Inc. www.silabs.com</b>
+ *******************************************************************************
+ *
+ * SPDX-License-Identifier: Zlib
+ *
+ * The licensor of this software is Silicon Laboratories Inc.
+ *
+ * This software is provided 'as-is', without any express or implied
+ * warranty. In no event will the authors be held liable for any damages
+ * arising from the use of this software.
+ *
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ *
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software. If you use this software
+ *    in a product, an acknowledgment in the product documentation would be
+ *    appreciated but is not required.
+ * 2. Altered source versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.
+ * 3. This notice may not be removed or altered from any source distribution.
+ *
+ ******************************************************************************/
+
 
 MEMORY
 {
@@ -40,12 +59,11 @@ MEMORY
  *   __bss_end__
  *   __end__
  *   end
+ *   __HeapBase
  *   __HeapLimit
  *   __StackLimit
  *   __StackTop
  *   __stack
- *   __Vectors_End
- *   __Vectors_Size
  */
 ENTRY(Reset_Handler)
 
@@ -54,9 +72,6 @@ SECTIONS
   .text :
   {
     KEEP(*(.vectors))
-    __Vectors_End = .;
-    __Vectors_Size = __Vectors_End - __Vectors;
-    __end__ = .;
 
     *(.text*)
 
@@ -82,6 +97,19 @@ SECTIONS
     KEEP(*(.eh_frame*))
   } > FLASH
 
+  /*
+   * SG veneers:
+   * All SG veneers are placed in the special output section .gnu.sgstubs. Its start address
+   * must be set, either with the command line option ‘--section-start’ or in a linker script,
+   * to indicate where to place these veneers in memory.
+   */
+/*
+  .gnu.sgstubs :
+  {
+    . = ALIGN(32);
+  } > FLASH
+*/
+
   .ARM.extab :
   {
     *(.ARM.extab* .gnu.linkonce.armextab.*)
@@ -94,41 +122,43 @@ SECTIONS
   } > FLASH
   __exidx_end = .;
 
-  /* To copy multiple ROM to RAM sections,
-   * uncomment .copy.table section and,
-   * define __STARTUP_COPY_MULTIPLE in startup_ARMCMx.S */
-  /*
   .copy.table :
   {
     . = ALIGN(4);
     __copy_table_start__ = .;
+
     LONG (__etext)
     LONG (__data_start__)
-    LONG (__data_end__ - __data_start__)
+    LONG ((__data_end__ - __data_start__) / 4)
+
+    /* Add each additional data section here */
+/*
     LONG (__etext2)
     LONG (__data2_start__)
-    LONG (__data2_end__ - __data2_start__)
+    LONG ((__data2_end__ - __data2_start__) / 4)
+*/
     __copy_table_end__ = .;
   } > FLASH
-  */
 
-  /* To clear multiple BSS sections,
-   * uncomment .zero.table section and,
-   * define __STARTUP_CLEAR_BSS_MULTIPLE in startup_ARMCMx.S */
-  /*
   .zero.table :
   {
     . = ALIGN(4);
     __zero_table_start__ = .;
-    LONG (__bss_start__)
-    LONG (__bss_end__ - __bss_start__)
+    /* Add each additional bss section here */
+/*
     LONG (__bss2_start__)
-    LONG (__bss2_end__ - __bss2_start__)
+    LONG ((__bss2_end__ - __bss2_start__) / 4)
+*/
     __zero_table_end__ = .;
   } > FLASH
-  */
 
-  __etext = .;
+  /*
+   *
+   * Location counter can end up 2byte aligned with narrow Thumb code but
+   * __etext is assumed by startup code to be the LMA of a section in RAM
+   * which must be 4byte aligned
+   */
+  __etext = ALIGN (4);
 
   .data : AT (__etext)
   {
@@ -136,7 +166,9 @@ SECTIONS
     *(vtable)
     *(.data*)
     . = ALIGN (4);
+    PROVIDE (__ram_func_section_start = .);
     *(.ram)
+    PROVIDE (__ram_func_section_end = .);
 
     . = ALIGN(4);
     /* preinit data */
@@ -165,17 +197,59 @@ SECTIONS
 
   } > RAM
 
+  /*
+   * Secondary data section, optional
+   *
+   * Remember to add each additional data section
+   * to the .copy.table above to asure proper
+   * initialization during startup.
+   */
+/*
+  __etext2 = ALIGN (4);
+
+  .data2 : AT (__etext2)
+  {
+    . = ALIGN(4);
+    __data2_start__ = .;
+    *(.data2)
+    *(.data2.*)
+    . = ALIGN(4);
+    __data2_end__ = .;
+
+  } > RAM2
+*/
+
   .bss :
   {
     . = ALIGN(4);
     __bss_start__ = .;
-    *(.bss*)
+    *(.bss)
+    *(.bss.*)
     *(COMMON)
     . = ALIGN(4);
     __bss_end__ = .;
   } > RAM
 
-  .heap (COPY):
+  /*
+   * Secondary bss section, optional
+   *
+   * Remember to add each additional bss section
+   * to the .zero.table above to asure proper
+   * initialization during startup.
+   */
+/*
+  .bss2 :
+  {
+    . = ALIGN(4);
+    __bss2_start__ = .;
+    *(.bss2)
+    *(.bss2.*)
+    . = ALIGN(4);
+    __bss2_end__ = .;
+  } > RAM2 AT > RAM2
+*/
+
+  .heap (COPY) :
   {
     __HeapBase = .;
     __end__ = .;
@@ -188,7 +262,7 @@ SECTIONS
   /* .stack_dummy section doesn't contains any symbols. It is only
    * used for linker to calculate size of stack sections, and assign
    * values to stack symbols later */
-  .stack_dummy (COPY):
+   .stack_dummy (COPY):
   {
     KEEP(*(.stack*))
   } > RAM

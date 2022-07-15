@@ -43,7 +43,11 @@ extern void pinMode(uint8_t ucPin, uint32_t u32Mode )
                       g_Pin2PortMapArray[ucPin].Pin_abstraction,
                       gpioModePushPull, 0);
       break ;
-
+    case gpioModeDisabled:
+      GPIO_PinModeSet(g_Pin2PortMapArray[ucPin].GPIOx_Port,
+                      g_Pin2PortMapArray[ucPin].Pin_abstraction,
+                      gpioModeDisabled, 0);
+      break ;
   }
 }
 

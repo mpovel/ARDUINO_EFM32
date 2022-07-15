@@ -228,7 +228,7 @@ static msc_Return_TypeDef EE_TransferPage(EE_Variable_TypeDef *var, uint16_t wri
   msc_Return_TypeDef retStatus;
   uint32_t           *activeAddress;
   uint32_t           *receivingAddress;
-  bool               newVariable;
+  bool               newVariable = false;
   uint32_t           eraseCount;
 
   /* If there is no receiving page predefined, set it to cycle through all allocated pages. */
@@ -467,7 +467,7 @@ bool EE_Init(uint32_t numberOfPages)
   else
   {
     /* Transfer variables from active to receiving page. */
-    EE_TransferPage(NULL, NULL);
+    EE_TransferPage(NULL, (uintptr_t)NULL);
   }
 
   /* Initialization completed successfully */

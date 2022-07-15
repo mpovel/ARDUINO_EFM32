@@ -25,7 +25,6 @@
 #include "emlib/src/em_ldma.c"
 #include "emlib/src/em_lesense.c"
 #include "emlib/src/em_leuart.c"
-#include "emlib/src/em_mpu.c"
 #include "emlib/src/em_msc.c"
 #include "emlib/src/em_opamp.c"
 #include "emlib/src/em_pcnt.c"

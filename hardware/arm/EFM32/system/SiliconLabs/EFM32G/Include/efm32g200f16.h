@@ -1,35 +1,39 @@
-/**************************************************************************//**
- * @file efm32g200f16.h
+/***************************************************************************//**
+ * @file
  * @brief CMSIS Cortex-M3 Peripheral Access Layer Header File
  *        for EFM EFM32G200F16
- * @version 5.1.2
- ******************************************************************************
- * @section License
- * <b>Copyright 2017 Silicon Laboratories, Inc. http://www.silabs.com</b>
- ******************************************************************************
+ *******************************************************************************
+ * # License
+ * <b>Copyright 2022 Silicon Laboratories Inc. www.silabs.com</b>
+ *******************************************************************************
+ *
+ * SPDX-License-Identifier: Zlib
+ *
+ * The licensor of this software is Silicon Laboratories Inc.
+ *
+ * This software is provided 'as-is', without any express or implied
+ * warranty. In no event will the authors be held liable for any damages
+ * arising from the use of this software.
  *
  * Permission is granted to anyone to use this software for any purpose,
  * including commercial applications, and to alter it and redistribute it
  * freely, subject to the following restrictions:
  *
  * 1. The origin of this software must not be misrepresented; you must not
- *    claim that you wrote the original software.@n
+ *    claim that you wrote the original software. If you use this software
+ *    in a product, an acknowledgment in the product documentation would be
+ *    appreciated but is not required.
  * 2. Altered source versions must be plainly marked as such, and must not be
- *    misrepresented as being the original software.@n
+ *    misrepresented as being the original software.
  * 3. This notice may not be removed or altered from any source distribution.
  *
- * DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Silicon Laboratories, Inc.
- * has no obligation to support this Software. Silicon Laboratories, Inc. is
- * providing the Software "AS IS", with no express or implied warranties of any
- * kind, including, but not limited to, any implied warranties of
- * merchantability or fitness for any particular purpose or warranties against
- * infringement of any proprietary rights of a third party.
- *
- * Silicon Laboratories, Inc. will not be liable for any consequential,
- * incidental, or special damages, or any other relief, or for any claim by
- * any third party, arising from your use of this Software.
- *
- *****************************************************************************/
+ ******************************************************************************/
+
+#if defined(__ICCARM__)
+#pragma system_include       /* Treat file as system include file. */
+#elif defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+#pragma clang system_header  /* Treat file as system include file. */
+#endif
 
 #ifndef EFM32G200F16_H
 #define EFM32G200F16_H
@@ -38,19 +42,18 @@
 extern "C" {
 #endif
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @addtogroup Parts
  * @{
- *****************************************************************************/
+ ******************************************************************************/
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16 EFM32G200F16
  * @{
- *****************************************************************************/
+ ******************************************************************************/
 
 /** Interrupt Number Definition */
-typedef enum IRQn
-{
+typedef enum IRQn{
 /******  Cortex-M3 Processor Exceptions Numbers ********************************************/
   NonMaskableInt_IRQn   = -14,              /*!< -14 Cortex-M3 Non Maskable Interrupt      */
   HardFault_IRQn        = -13,              /*!< -13 Cortex-M3 Hard Fault Interrupt        */
@@ -85,30 +88,30 @@ typedef enum IRQn
   MSC_IRQn              = 28, /*!< 28 EFM32 MSC Interrupt */
 } IRQn_Type;
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_Core EFM32G200F16 Core
  * @{
  * @brief Processor and Core Peripheral Section
- *****************************************************************************/
-#define __MPU_PRESENT             1 /**< Presence of MPU  */
-#define __VTOR_PRESENT            1 /**< Presence of VTOR register in SCB */
-#define __NVIC_PRIO_BITS          3 /**< NVIC interrupt priority bits */
-#define __Vendor_SysTickConfig    0 /**< Is 1 if different SysTick counter is used */
+ ******************************************************************************/
+#define __MPU_PRESENT             1U /**< Presence of MPU  */
+#define __VTOR_PRESENT            1U /**< Presence of VTOR register in SCB */
+#define __NVIC_PRIO_BITS          3U /**< NVIC interrupt priority bits */
+#define __Vendor_SysTickConfig    0U /**< Is 1 if different SysTick counter is used */
 
 /** @} End of group EFM32G200F16_Core */
 
-/**************************************************************************//**
+/***************************************************************************//**
 * @defgroup EFM32G200F16_Part EFM32G200F16 Part
 * @{
-******************************************************************************/
+*******************************************************************************/
 
 /** Part family */
 #define _EFM32_GECKO_FAMILY                     1  /**< Gecko EFM32G MCU Family */
 #define _EFM_DEVICE                                /**< Silicon Labs EFM-type microcontroller */
 #define _SILICON_LABS_32B_SERIES_0                 /**< Silicon Labs series number */
 #define _SILICON_LABS_32B_SERIES                0  /**< Silicon Labs series number */
-#define _SILICON_LABS_GECKO_INTERNAL_SDID       71 /** Silicon Labs internal use only, may change any time */
-#define _SILICON_LABS_GECKO_INTERNAL_SDID_71       /** Silicon Labs internal use only, may change any time */
+#define _SILICON_LABS_GECKO_INTERNAL_SDID       71 /**< Silicon Labs internal use only, may change any time */
+#define _SILICON_LABS_GECKO_INTERNAL_SDID_71       /**< Silicon Labs internal use only, may change any time */
 #define _SILICON_LABS_32B_PLATFORM_1               /**< @deprecated Silicon Labs platform name */
 #define _SILICON_LABS_32B_PLATFORM              1  /**< @deprecated Silicon Labs platform name */
 
@@ -121,204 +124,202 @@ typedef enum IRQn
 #define PART_NUMBER          "EFM32G200F16" /**< Part Number */
 
 /** Memory Base addresses and limits */
-#define FLASH_MEM_BASE       ((uint32_t) 0x0UL)        /**< FLASH base address  */
-#define FLASH_MEM_SIZE       ((uint32_t) 0x10000000UL) /**< FLASH available address space  */
-#define FLASH_MEM_END        ((uint32_t) 0xFFFFFFFUL)  /**< FLASH end address  */
-#define FLASH_MEM_BITS       ((uint32_t) 0x28UL)       /**< FLASH used bits  */
-#define AES_MEM_BASE         ((uint32_t) 0x400E0000UL) /**< AES base address  */
-#define AES_MEM_SIZE         ((uint32_t) 0x400UL)      /**< AES available address space  */
-#define AES_MEM_END          ((uint32_t) 0x400E03FFUL) /**< AES end address  */
-#define AES_MEM_BITS         ((uint32_t) 0x10UL)       /**< AES used bits  */
-#define PER_MEM_BASE         ((uint32_t) 0x40000000UL) /**< PER base address  */
-#define PER_MEM_SIZE         ((uint32_t) 0xE0000UL)    /**< PER available address space  */
-#define PER_MEM_END          ((uint32_t) 0x400DFFFFUL) /**< PER end address  */
-#define PER_MEM_BITS         ((uint32_t) 0x20UL)       /**< PER used bits  */
-#define RAM_MEM_BASE         ((uint32_t) 0x20000000UL) /**< RAM base address  */
-#define RAM_MEM_SIZE         ((uint32_t) 0x8000UL)     /**< RAM available address space  */
-#define RAM_MEM_END          ((uint32_t) 0x20007FFFUL) /**< RAM end address  */
-#define RAM_MEM_BITS         ((uint32_t) 0x15UL)       /**< RAM used bits  */
-#define RAM_CODE_MEM_BASE    ((uint32_t) 0x10000000UL) /**< RAM_CODE base address  */
-#define RAM_CODE_MEM_SIZE    ((uint32_t) 0x4000UL)     /**< RAM_CODE available address space  */
-#define RAM_CODE_MEM_END     ((uint32_t) 0x10003FFFUL) /**< RAM_CODE end address  */
-#define RAM_CODE_MEM_BITS    ((uint32_t) 0x14UL)       /**< RAM_CODE used bits  */
-#define EBI_MEM_BASE         ((uint32_t) 0x80000000UL) /**< EBI base address  */
-#define EBI_MEM_SIZE         ((uint32_t) 0x10000000UL) /**< EBI available address space  */
-#define EBI_MEM_END          ((uint32_t) 0x8FFFFFFFUL) /**< EBI end address  */
-#define EBI_MEM_BITS         ((uint32_t) 0x28UL)       /**< EBI used bits  */
+#define RAM_MEM_BASE         (0x20000000UL) /**< RAM base address  */
+#define RAM_MEM_SIZE         (0x8000UL)     /**< RAM available address space  */
+#define RAM_MEM_END          (0x20007FFFUL) /**< RAM end address  */
+#define RAM_MEM_BITS         (0x15UL)       /**< RAM used bits  */
+#define RAM_CODE_MEM_BASE    (0x10000000UL) /**< RAM_CODE base address  */
+#define RAM_CODE_MEM_SIZE    (0x4000UL)     /**< RAM_CODE available address space  */
+#define RAM_CODE_MEM_END     (0x10003FFFUL) /**< RAM_CODE end address  */
+#define RAM_CODE_MEM_BITS    (0x14UL)       /**< RAM_CODE used bits  */
+#define PER_MEM_BASE         (0x40000000UL) /**< PER base address  */
+#define PER_MEM_SIZE         (0xE0000UL)    /**< PER available address space  */
+#define PER_MEM_END          (0x400DFFFFUL) /**< PER end address  */
+#define PER_MEM_BITS         (0x20UL)       /**< PER used bits  */
+#define EBI_MEM_BASE         (0x80000000UL) /**< EBI base address  */
+#define EBI_MEM_SIZE         (0x10000000UL) /**< EBI available address space  */
+#define EBI_MEM_END          (0x8FFFFFFFUL) /**< EBI end address  */
+#define EBI_MEM_BITS         (0x28UL)       /**< EBI used bits  */
+#define FLASH_MEM_BASE       (0x0UL)        /**< FLASH base address  */
+#define FLASH_MEM_SIZE       (0x10000000UL) /**< FLASH available address space  */
+#define FLASH_MEM_END        (0xFFFFFFFUL)  /**< FLASH end address  */
+#define FLASH_MEM_BITS       (0x28UL)       /**< FLASH used bits  */
+#define AES_MEM_BASE         (0x400E0000UL) /**< AES base address  */
+#define AES_MEM_SIZE         (0x400UL)      /**< AES available address space  */
+#define AES_MEM_END          (0x400E03FFUL) /**< AES end address  */
+#define AES_MEM_BITS         (0x10UL)       /**< AES used bits  */
 
 /** Bit banding area */
-#define BITBAND_PER_BASE     ((uint32_t) 0x42000000UL) /**< Peripheral Address Space bit-band area */
-#define BITBAND_RAM_BASE     ((uint32_t) 0x22000000UL) /**< SRAM Address Space bit-band area */
+#define BITBAND_PER_BASE     (0x42000000UL) /**< Peripheral Address Space bit-band area */
+#define BITBAND_RAM_BASE     (0x22000000UL) /**< SRAM Address Space bit-band area */
 
 /** Flash and SRAM limits for EFM32G200F16 */
 #define FLASH_BASE           (0x00000000UL) /**< Flash Base Address */
 #define FLASH_SIZE           (0x00004000UL) /**< Available Flash Memory */
-#define FLASH_PAGE_SIZE      512            /**< Flash Memory page size */
+#define FLASH_PAGE_SIZE      512U           /**< Flash Memory page size */
 #define SRAM_BASE            (0x20000000UL) /**< SRAM Base Address */
 #define SRAM_SIZE            (0x00002000UL) /**< Available SRAM Memory */
-#define __CM3_REV            0x200          /**< Cortex-M3 Core revision r2p0 */
+#define __CM3_REV            0x0200U        /**< Cortex-M3 Core revision r2p0 */
 #define PRS_CHAN_COUNT       8              /**< Number of PRS channels */
 #define DMA_CHAN_COUNT       8              /**< Number of DMA channels */
 #define EXT_IRQ_COUNT        31             /**< Number of External (NVIC) interrupts */
 
 /** AF channels connect the different on-chip peripherals with the af-mux */
-#define AFCHAN_MAX           79
-#define AFCHANLOC_MAX        4
+#define AFCHAN_MAX           79U
+#define AFCHANLOC_MAX        4U
 /** Analog AF channels */
-#define AFACHAN_MAX          37
+#define AFACHAN_MAX          37U
 
 /* Part number capabilities */
 
-#define TIMER_PRESENT         /**< TIMER is available in this part */
-#define TIMER_COUNT         2 /**< 2 TIMERs available  */
-#define USART_PRESENT         /**< USART is available in this part */
-#define USART_COUNT         2 /**< 2 USARTs available  */
-#define LEUART_PRESENT        /**< LEUART is available in this part */
-#define LEUART_COUNT        1 /**< 1 LEUARTs available  */
-#define LETIMER_PRESENT       /**< LETIMER is available in this part */
-#define LETIMER_COUNT       1 /**< 1 LETIMERs available  */
-#define PCNT_PRESENT          /**< PCNT is available in this part */
-#define PCNT_COUNT          1 /**< 1 PCNTs available  */
-#define ACMP_PRESENT          /**< ACMP is available in this part */
-#define ACMP_COUNT          2 /**< 2 ACMPs available  */
-#define DAC_PRESENT           /**< DAC is available in this part */
-#define DAC_COUNT           1 /**< 1 DACs available  */
-#define ADC_PRESENT           /**< ADC is available in this part */
-#define ADC_COUNT           1 /**< 1 ADCs available  */
-#define I2C_PRESENT           /**< I2C is available in this part */
-#define I2C_COUNT           1 /**< 1 I2Cs available  */
-#define DMA_PRESENT
-#define DMA_COUNT           1
-#define LE_PRESENT
-#define LE_COUNT            1
-#define MSC_PRESENT
-#define MSC_COUNT           1
-#define EMU_PRESENT
-#define EMU_COUNT           1
-#define RMU_PRESENT
-#define RMU_COUNT           1
-#define CMU_PRESENT
-#define CMU_COUNT           1
-#define RTC_PRESENT
-#define RTC_COUNT           1
-#define PRS_PRESENT
-#define PRS_COUNT           1
-#define GPIO_PRESENT
-#define GPIO_COUNT          1
-#define VCMP_PRESENT
-#define VCMP_COUNT          1
-#define HFXTAL_PRESENT
-#define HFXTAL_COUNT        1
-#define LFXTAL_PRESENT
-#define LFXTAL_COUNT        1
-#define WDOG_PRESENT
-#define WDOG_COUNT          1
-#define DBG_PRESENT
-#define DBG_COUNT           1
-#define BOOTLOADER_PRESENT
-#define BOOTLOADER_COUNT    1
-#define ANALOG_PRESENT
-#define ANALOG_COUNT        1
+#define TIMER_PRESENT           /**< TIMER is available in this part */
+#define TIMER_COUNT           2 /**< 2 TIMERs available  */
+#define USART_PRESENT           /**< USART is available in this part */
+#define USART_COUNT           2 /**< 2 USARTs available  */
+#define LEUART_PRESENT          /**< LEUART is available in this part */
+#define LEUART_COUNT          1 /**< 1 LEUARTs available  */
+#define LETIMER_PRESENT         /**< LETIMER is available in this part */
+#define LETIMER_COUNT         1 /**< 1 LETIMERs available  */
+#define PCNT_PRESENT            /**< PCNT is available in this part */
+#define PCNT_COUNT            1 /**< 1 PCNTs available  */
+#define ACMP_PRESENT            /**< ACMP is available in this part */
+#define ACMP_COUNT            2 /**< 2 ACMPs available  */
+#define DAC_PRESENT             /**< DAC is available in this part */
+#define DAC_COUNT             1 /**< 1 DACs available  */
+#define ADC_PRESENT             /**< ADC is available in this part */
+#define ADC_COUNT             1 /**< 1 ADCs available  */
+#define I2C_PRESENT             /**< I2C is available in this part */
+#define I2C_COUNT             1 /**< 1 I2Cs available  */
+#define DMA_PRESENT             /**< DMA is available in this part */
+#define DMA_COUNT             1 /**< 1 DMA available */
+#define LE_PRESENT              /**< LE is available in this part */
+#define LE_COUNT              1 /**< 1 LE available */
+#define MSC_PRESENT             /**< MSC is available in this part */
+#define MSC_COUNT             1 /**< 1 MSC available */
+#define EMU_PRESENT             /**< EMU is available in this part */
+#define EMU_COUNT             1 /**< 1 EMU available */
+#define RMU_PRESENT             /**< RMU is available in this part */
+#define RMU_COUNT             1 /**< 1 RMU available */
+#define CMU_PRESENT             /**< CMU is available in this part */
+#define CMU_COUNT             1 /**< 1 CMU available */
+#define RTC_PRESENT             /**< RTC is available in this part */
+#define RTC_COUNT             1 /**< 1 RTC available */
+#define PRS_PRESENT             /**< PRS is available in this part */
+#define PRS_COUNT             1 /**< 1 PRS available */
+#define GPIO_PRESENT            /**< GPIO is available in this part */
+#define GPIO_COUNT            1 /**< 1 GPIO available */
+#define VCMP_PRESENT            /**< VCMP is available in this part */
+#define VCMP_COUNT            1 /**< 1 VCMP available */
+#define HFXTAL_PRESENT          /**< HFXTAL is available in this part */
+#define HFXTAL_COUNT          1 /**< 1 HFXTAL available */
+#define LFXTAL_PRESENT          /**< LFXTAL is available in this part */
+#define LFXTAL_COUNT          1 /**< 1 LFXTAL available */
+#define WDOG_PRESENT            /**< WDOG is available in this part */
+#define WDOG_COUNT            1 /**< 1 WDOG available */
+#define DBG_PRESENT             /**< DBG is available in this part */
+#define DBG_COUNT             1 /**< 1 DBG available */
+#define BOOTLOADER_PRESENT      /**< BOOTLOADER is available in this part */
+#define BOOTLOADER_COUNT      1 /**< 1 BOOTLOADER available */
+#define ANALOG_PRESENT          /**< ANALOG is available in this part */
+#define ANALOG_COUNT          1 /**< 1 ANALOG available */
 
-#include "core_cm3.h"      /* Cortex-M3 processor and core peripherals */
-#include "system_efm32g.h" /* System Header */
+#include "core_cm3.h"           /* Cortex-M3 processor and core peripherals */
+#include "system_efm32g.h"       /* System Header */
 
 /** @} End of group EFM32G200F16_Part */
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_Peripheral_TypeDefs EFM32G200F16 Peripheral TypeDefs
  * @{
  * @brief Device Specific Peripheral Register Structures
- *****************************************************************************/
+ ******************************************************************************/
 
 #include "efm32g_dma_ch.h"
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_DMA EFM32G200F16 DMA
  * @{
  * @brief EFM32G200F16_DMA Register Declaration
- *****************************************************************************/
-typedef struct
-{
-  __IM uint32_t  STATUS;         /**< DMA Status Registers  */
-  __OM uint32_t  CONFIG;         /**< DMA Configuration Register  */
-  __IOM uint32_t CTRLBASE;       /**< Channel Control Data Base Pointer Register  */
-  __IM uint32_t  ALTCTRLBASE;    /**< Channel Alternate Control Data Base Pointer Register  */
-  __IM uint32_t  CHWAITSTATUS;   /**< Channel Wait on Request Status Register  */
-  __OM uint32_t  CHSWREQ;        /**< Channel Software Request Register  */
-  __IOM uint32_t CHUSEBURSTS;    /**< Channel Useburst Set Register  */
-  __OM uint32_t  CHUSEBURSTC;    /**< Channel Useburst Clear Register  */
-  __IOM uint32_t CHREQMASKS;     /**< Channel Request Mask Set Register  */
-  __OM uint32_t  CHREQMASKC;     /**< Channel Request Mask Clear Register  */
-  __IOM uint32_t CHENS;          /**< Channel Enable Set Register  */
-  __OM uint32_t  CHENC;          /**< Channel Enable Clear Register  */
-  __IOM uint32_t CHALTS;         /**< Channel Alternate Set Register  */
-  __OM uint32_t  CHALTC;         /**< Channel Alternate Clear Register  */
-  __IOM uint32_t CHPRIS;         /**< Channel Priority Set Register  */
-  __OM uint32_t  CHPRIC;         /**< Channel Priority Clear Register  */
-  uint32_t       RESERVED0[3];   /**< Reserved for future use **/
-  __IOM uint32_t ERRORC;         /**< Bus Error Clear Register  */
-  uint32_t       RESERVED1[880]; /**< Reserved for future use **/
-  __IM uint32_t  CHREQSTATUS;    /**< Channel Request Status  */
-  uint32_t       RESERVED2[1];   /**< Reserved for future use **/
-  __IM uint32_t  CHSREQSTATUS;   /**< Channel Single Request Status  */
+ ******************************************************************************/
+typedef struct {
+  __IM uint32_t  STATUS;          /**< DMA Status Registers  */
+  __OM uint32_t  CONFIG;          /**< DMA Configuration Register  */
+  __IOM uint32_t CTRLBASE;        /**< Channel Control Data Base Pointer Register  */
+  __IM uint32_t  ALTCTRLBASE;     /**< Channel Alternate Control Data Base Pointer Register  */
+  __IM uint32_t  CHWAITSTATUS;    /**< Channel Wait on Request Status Register  */
+  __OM uint32_t  CHSWREQ;         /**< Channel Software Request Register  */
+  __IOM uint32_t CHUSEBURSTS;     /**< Channel Useburst Set Register  */
+  __OM uint32_t  CHUSEBURSTC;     /**< Channel Useburst Clear Register  */
+  __IOM uint32_t CHREQMASKS;      /**< Channel Request Mask Set Register  */
+  __OM uint32_t  CHREQMASKC;      /**< Channel Request Mask Clear Register  */
+  __IOM uint32_t CHENS;           /**< Channel Enable Set Register  */
+  __OM uint32_t  CHENC;           /**< Channel Enable Clear Register  */
+  __IOM uint32_t CHALTS;          /**< Channel Alternate Set Register  */
+  __OM uint32_t  CHALTC;          /**< Channel Alternate Clear Register  */
+  __IOM uint32_t CHPRIS;          /**< Channel Priority Set Register  */
+  __OM uint32_t  CHPRIC;          /**< Channel Priority Clear Register  */
+  uint32_t       RESERVED0[3U];   /**< Reserved for future use **/
+  __IOM uint32_t ERRORC;          /**< Bus Error Clear Register  */
+  uint32_t       RESERVED1[880U]; /**< Reserved for future use **/
+  __IM uint32_t  CHREQSTATUS;     /**< Channel Request Status  */
+  uint32_t       RESERVED2[1U];   /**< Reserved for future use **/
+  __IM uint32_t  CHSREQSTATUS;    /**< Channel Single Request Status  */
 
-  uint32_t       RESERVED3[121]; /**< Reserved for future use **/
-  __IM uint32_t  IF;             /**< Interrupt Flag Register  */
-  __IOM uint32_t IFS;            /**< Interrupt Flag Set Register  */
-  __IOM uint32_t IFC;            /**< Interrupt Flag Clear Register  */
-  __IOM uint32_t IEN;            /**< Interrupt Enable register  */
+  uint32_t       RESERVED3[121U]; /**< Reserved for future use **/
+  __IM uint32_t  IF;              /**< Interrupt Flag Register  */
+  __IOM uint32_t IFS;             /**< Interrupt Flag Set Register  */
+  __IOM uint32_t IFC;             /**< Interrupt Flag Clear Register  */
+  __IOM uint32_t IEN;             /**< Interrupt Enable register  */
 
-  uint32_t       RESERVED4[60];  /**< Reserved registers */
+  uint32_t       RESERVED4[60U];  /**< Reserved registers */
 
-  DMA_CH_TypeDef CH[8];          /**< Channel registers */
-} DMA_TypeDef;                   /** @} */
+  DMA_CH_TypeDef CH[8U];          /**< Channel registers */
+} DMA_TypeDef;                    /**< DMA Register Declaration *//** @} */
 
 #include "efm32g_msc.h"
 #include "efm32g_emu.h"
 #include "efm32g_rmu.h"
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_CMU EFM32G200F16 CMU
  * @{
  * @brief EFM32G200F16_CMU Register Declaration
- *****************************************************************************/
-typedef struct
-{
-  __IOM uint32_t CTRL;         /**< CMU Control Register  */
-  __IOM uint32_t HFCORECLKDIV; /**< High Frequency Core Clock Division Register  */
-  __IOM uint32_t HFPERCLKDIV;  /**< High Frequency Peripheral Clock Division Register  */
-  __IOM uint32_t HFRCOCTRL;    /**< HFRCO Control Register  */
-  __IOM uint32_t LFRCOCTRL;    /**< LFRCO Control Register  */
-  __IOM uint32_t AUXHFRCOCTRL; /**< AUXHFRCO Control Register  */
-  __IOM uint32_t CALCTRL;      /**< Calibration Control Register  */
-  __IOM uint32_t CALCNT;       /**< Calibration Counter Register  */
-  __IOM uint32_t OSCENCMD;     /**< Oscillator Enable/Disable Command Register  */
-  __IOM uint32_t CMD;          /**< Command Register  */
-  __IOM uint32_t LFCLKSEL;     /**< Low Frequency Clock Select Register  */
-  __IM uint32_t  STATUS;       /**< Status Register  */
-  __IM uint32_t  IF;           /**< Interrupt Flag Register  */
-  __IOM uint32_t IFS;          /**< Interrupt Flag Set Register  */
-  __IOM uint32_t IFC;          /**< Interrupt Flag Clear Register  */
-  __IOM uint32_t IEN;          /**< Interrupt Enable Register  */
-  __IOM uint32_t HFCORECLKEN0; /**< High Frequency Core Clock Enable Register 0  */
-  __IOM uint32_t HFPERCLKEN0;  /**< High Frequency Peripheral Clock Enable Register 0  */
-  uint32_t       RESERVED0[2]; /**< Reserved for future use **/
-  __IM uint32_t  SYNCBUSY;     /**< Synchronization Busy Register  */
-  __IOM uint32_t FREEZE;       /**< Freeze Register  */
-  __IOM uint32_t LFACLKEN0;    /**< Low Frequency A Clock Enable Register 0  (Async Reg)  */
-  uint32_t       RESERVED1[1]; /**< Reserved for future use **/
-  __IOM uint32_t LFBCLKEN0;    /**< Low Frequency B Clock Enable Register 0 (Async Reg)  */
-  uint32_t       RESERVED2[1]; /**< Reserved for future use **/
-  __IOM uint32_t LFAPRESC0;    /**< Low Frequency A Prescaler Register 0 (Async Reg)  */
-  uint32_t       RESERVED3[1]; /**< Reserved for future use **/
-  __IOM uint32_t LFBPRESC0;    /**< Low Frequency B Prescaler Register 0  (Async Reg)  */
-  uint32_t       RESERVED4[1]; /**< Reserved for future use **/
-  __IOM uint32_t PCNTCTRL;     /**< PCNT Control Register  */
-  uint32_t       RESERVED5[1]; /**< Reserved for future use **/
-  __IOM uint32_t ROUTE;        /**< I/O Routing Register  */
-  __IOM uint32_t LOCK;         /**< Configuration Lock Register  */
-} CMU_TypeDef;                 /** @} */
+ ******************************************************************************/
+typedef struct {
+  __IOM uint32_t CTRL;          /**< CMU Control Register  */
+  __IOM uint32_t HFCORECLKDIV;  /**< High Frequency Core Clock Division Register  */
+  __IOM uint32_t HFPERCLKDIV;   /**< High Frequency Peripheral Clock Division Register  */
+  __IOM uint32_t HFRCOCTRL;     /**< HFRCO Control Register  */
+  __IOM uint32_t LFRCOCTRL;     /**< LFRCO Control Register  */
+  __IOM uint32_t AUXHFRCOCTRL;  /**< AUXHFRCO Control Register  */
+  __IOM uint32_t CALCTRL;       /**< Calibration Control Register  */
+  __IOM uint32_t CALCNT;        /**< Calibration Counter Register  */
+  __IOM uint32_t OSCENCMD;      /**< Oscillator Enable/Disable Command Register  */
+  __IOM uint32_t CMD;           /**< Command Register  */
+  __IOM uint32_t LFCLKSEL;      /**< Low Frequency Clock Select Register  */
+  __IM uint32_t  STATUS;        /**< Status Register  */
+  __IM uint32_t  IF;            /**< Interrupt Flag Register  */
+  __IOM uint32_t IFS;           /**< Interrupt Flag Set Register  */
+  __IOM uint32_t IFC;           /**< Interrupt Flag Clear Register  */
+  __IOM uint32_t IEN;           /**< Interrupt Enable Register  */
+  __IOM uint32_t HFCORECLKEN0;  /**< High Frequency Core Clock Enable Register 0  */
+  __IOM uint32_t HFPERCLKEN0;   /**< High Frequency Peripheral Clock Enable Register 0  */
+  uint32_t       RESERVED0[2U]; /**< Reserved for future use **/
+  __IM uint32_t  SYNCBUSY;      /**< Synchronization Busy Register  */
+  __IOM uint32_t FREEZE;        /**< Freeze Register  */
+  __IOM uint32_t LFACLKEN0;     /**< Low Frequency A Clock Enable Register 0  (Async Reg)  */
+  uint32_t       RESERVED1[1U]; /**< Reserved for future use **/
+  __IOM uint32_t LFBCLKEN0;     /**< Low Frequency B Clock Enable Register 0 (Async Reg)  */
+  uint32_t       RESERVED2[1U]; /**< Reserved for future use **/
+  __IOM uint32_t LFAPRESC0;     /**< Low Frequency A Prescaler Register 0 (Async Reg)  */
+  uint32_t       RESERVED3[1U]; /**< Reserved for future use **/
+  __IOM uint32_t LFBPRESC0;     /**< Low Frequency B Prescaler Register 0  (Async Reg)  */
+  uint32_t       RESERVED4[1U]; /**< Reserved for future use **/
+  __IOM uint32_t PCNTCTRL;      /**< PCNT Control Register  */
+  uint32_t       RESERVED5[1U]; /**< Reserved for future use **/
+  __IOM uint32_t ROUTE;         /**< I/O Routing Register  */
+  __IOM uint32_t LOCK;          /**< Configuration Lock Register  */
+} CMU_TypeDef;                  /**< CMU Register Declaration *//** @} */
 
 #include "efm32g_timer_cc.h"
 #include "efm32g_timer.h"
@@ -330,20 +331,19 @@ typedef struct
 #include "efm32g_acmp.h"
 #include "efm32g_prs_ch.h"
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_PRS EFM32G200F16 PRS
  * @{
  * @brief EFM32G200F16_PRS Register Declaration
- *****************************************************************************/
-typedef struct
-{
-  __IOM uint32_t SWPULSE;      /**< Software Pulse Register  */
-  __IOM uint32_t SWLEVEL;      /**< Software Level Register  */
+ ******************************************************************************/
+typedef struct {
+  __IOM uint32_t SWPULSE;       /**< Software Pulse Register  */
+  __IOM uint32_t SWLEVEL;       /**< Software Level Register  */
 
-  uint32_t       RESERVED0[2]; /**< Reserved registers */
+  uint32_t       RESERVED0[2U]; /**< Reserved registers */
 
-  PRS_CH_TypeDef CH[8];        /**< Channel registers */
-} PRS_TypeDef;                 /** @} */
+  PRS_CH_TypeDef CH[8U];        /**< Channel registers */
+} PRS_TypeDef;                  /**< PRS Register Declaration *//** @} */
 
 #include "efm32g_dac.h"
 #include "efm32g_gpio_p.h"
@@ -359,10 +359,10 @@ typedef struct
 
 /** @} End of group EFM32G200F16_Peripheral_TypeDefs */
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_Peripheral_Base EFM32G200F16 Peripheral Memory Map
  * @{
- *****************************************************************************/
+ ******************************************************************************/
 
 #define DMA_BASE          (0x400C2000UL) /**< DMA base address  */
 #define MSC_BASE          (0x400C0000UL) /**< MSC base address  */
@@ -394,10 +394,10 @@ typedef struct
 
 /** @} End of group EFM32G200F16_Peripheral_Base */
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_Peripheral_Declaration  EFM32G200F16 Peripheral Declarations
  * @{
- *****************************************************************************/
+ ******************************************************************************/
 
 #define DMA          ((DMA_TypeDef *) DMA_BASE)             /**< DMA base pointer */
 #define MSC          ((MSC_TypeDef *) MSC_BASE)             /**< MSC base pointer */
@@ -427,16 +427,16 @@ typedef struct
 
 /** @} End of group EFM32G200F16_Peripheral_Declaration */
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_BitFields EFM32G200F16 Bit Fields
  * @{
- *****************************************************************************/
+ ******************************************************************************/
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @addtogroup EFM32G200F16_PRS_Signals
  * @{
  * @brief PRS Signal names
- *****************************************************************************/
+ ******************************************************************************/
 
 #define PRS_VCMP_OUT          ((1 << 16) + 0)  /**< PRS Voltage comparator output */
 #define PRS_ACMP0_OUT         ((2 << 16) + 0)  /**< PRS Analog comparator output */
@@ -486,10 +486,10 @@ typedef struct
 #include "efm32g_dmareq.h"
 #include "efm32g_dmactrl.h"
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_DMA_BitFields  EFM32G200F16_DMA Bit Fields
  * @{
- *****************************************************************************/
+ ******************************************************************************/
 
 /* Bit fields for DMA STATUS */
 #define _DMA_STATUS_RESETVALUE                          0x10070000UL                          /**< Default value for DMA_STATUS */
@@ -1463,12 +1463,10 @@ typedef struct
 
 /** @} End of group EFM32G200F16_DMA */
 
-
-
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_CMU_BitFields  EFM32G200F16_CMU Bit Fields
  * @{
- *****************************************************************************/
+ ******************************************************************************/
 
 /* Bit fields for CMU CTRL */
 #define _CMU_CTRL_RESETVALUE                       0x000C262CUL                             /**< Default value for CMU_CTRL */
@@ -2300,23 +2298,22 @@ typedef struct
 #define _CMU_LOCK_LOCKKEY_SHIFT                    0                                 /**< Shift value for CMU_LOCKKEY */
 #define _CMU_LOCK_LOCKKEY_MASK                     0xFFFFUL                          /**< Bit mask for CMU_LOCKKEY */
 #define _CMU_LOCK_LOCKKEY_DEFAULT                  0x00000000UL                      /**< Mode DEFAULT for CMU_LOCK */
-#define _CMU_LOCK_LOCKKEY_LOCK                     0x00000000UL                      /**< Mode LOCK for CMU_LOCK */
 #define _CMU_LOCK_LOCKKEY_UNLOCKED                 0x00000000UL                      /**< Mode UNLOCKED for CMU_LOCK */
+#define _CMU_LOCK_LOCKKEY_LOCK                     0x00000000UL                      /**< Mode LOCK for CMU_LOCK */
 #define _CMU_LOCK_LOCKKEY_LOCKED                   0x00000001UL                      /**< Mode LOCKED for CMU_LOCK */
 #define _CMU_LOCK_LOCKKEY_UNLOCK                   0x0000580EUL                      /**< Mode UNLOCK for CMU_LOCK */
 #define CMU_LOCK_LOCKKEY_DEFAULT                   (_CMU_LOCK_LOCKKEY_DEFAULT << 0)  /**< Shifted mode DEFAULT for CMU_LOCK */
-#define CMU_LOCK_LOCKKEY_LOCK                      (_CMU_LOCK_LOCKKEY_LOCK << 0)     /**< Shifted mode LOCK for CMU_LOCK */
 #define CMU_LOCK_LOCKKEY_UNLOCKED                  (_CMU_LOCK_LOCKKEY_UNLOCKED << 0) /**< Shifted mode UNLOCKED for CMU_LOCK */
+#define CMU_LOCK_LOCKKEY_LOCK                      (_CMU_LOCK_LOCKKEY_LOCK << 0)     /**< Shifted mode LOCK for CMU_LOCK */
 #define CMU_LOCK_LOCKKEY_LOCKED                    (_CMU_LOCK_LOCKKEY_LOCKED << 0)   /**< Shifted mode LOCKED for CMU_LOCK */
 #define CMU_LOCK_LOCKKEY_UNLOCK                    (_CMU_LOCK_LOCKKEY_UNLOCK << 0)   /**< Shifted mode UNLOCK for CMU_LOCK */
 
 /** @} End of group EFM32G200F16_CMU */
 
-
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_PRS_BitFields  EFM32G200F16_PRS Bit Fields
  * @{
- *****************************************************************************/
+ ******************************************************************************/
 
 /* Bit fields for PRS SWPULSE */
 #define _PRS_SWPULSE_RESETVALUE              0x00000000UL                         /**< Default value for PRS_SWPULSE */
@@ -2536,12 +2533,10 @@ typedef struct
 
 /** @} End of group EFM32G200F16_PRS */
 
-
-
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_UNLOCK EFM32G200F16 Unlock Codes
  * @{
- *****************************************************************************/
+ ******************************************************************************/
 #define MSC_UNLOCK_CODE      0x1B71 /**< MSC unlock code */
 #define EMU_UNLOCK_CODE      0xADE8 /**< EMU unlock code */
 #define CMU_UNLOCK_CODE      0x580E /**< CMU unlock code */
@@ -2552,17 +2547,17 @@ typedef struct
 
 /** @} End of group EFM32G200F16_BitFields */
 
-/**************************************************************************//**
+/***************************************************************************//**
  * @defgroup EFM32G200F16_Alternate_Function EFM32G200F16 Alternate Function
  * @{
- *****************************************************************************/
+ ******************************************************************************/
 
 #include "efm32g_af_ports.h"
 #include "efm32g_af_pins.h"
 
 /** @} End of group EFM32G200F16_Alternate_Function */
 
-/**************************************************************************//**
+/***************************************************************************//**
  *  @brief Set the value of a bit field within a register.
  *
  *  @param REG
@@ -2574,7 +2569,7 @@ typedef struct
  *  @param OFFSET
  *       The number of bits that the field is offset within the register.
  *       0 (zero) means LSB.
- *****************************************************************************/
+ ******************************************************************************/
 #define SET_BIT_FIELD(REG, MASK, VALUE, OFFSET) \
   REG = ((REG) &~(MASK)) | (((VALUE) << (OFFSET)) & (MASK));
 
@@ -2585,4 +2580,5 @@ typedef struct
 #ifdef __cplusplus
 }
 #endif
+
 #endif /* EFM32G200F16_H */
