@@ -58,7 +58,7 @@ build.ldscript=ld/ldscript.ld
 build.extra_lib=
 build.spacil_includes=
 
-compiler.extra_includes="-I{build.path}/sketch"  {includes}  "-I{build.core.path}/efm32" "-I{build.system.path}" "-I{build.system.path}/CMSIS/inc" "-I{build.system.path}/emlib/inc" "-I{build.system.path}/SiliconLabs/{build.series}/Include"  {build.spacil_includes}
+compiler.extra_includes="-I{build.path}/sketch"  {includes}  "-I{build.core.path}/efm32" "-I{build.system.path}" "-I{build.system.path}/CMSIS/inc" "-I{build.system.path}/emlib/inc" "-I{build.system.path}/common/inc" "-I{build.system.path}/SiliconLabs/{build.series}/Include"  {build.spacil_includes}
 
 # These can be overridden in platform.local.txt
 compiler.c.extra_flags=
