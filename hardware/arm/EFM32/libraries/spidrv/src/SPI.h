@@ -46,7 +46,7 @@ public:
   inline static void transfer(__attribute__((unused)) void *buf, __attribute__((unused)) size_t count) {
   }
   // Write and read multiple bytes (blocking)
-  inline void transfer(void *bufTx, void *bufRx, size_t count) {
+  inline void transfer(const void *bufTx, void *bufRx, size_t count) {
     SPIDRV_MTransferB(spidrvHandle, bufTx, bufRx, count);
   }
   // Read multiple bytes (blocking)
@@ -54,7 +54,7 @@ public:
     SPIDRV_MReceiveB(spidrvHandle, bufRx, count);
   }
   // Write multiple bytes (blocking)
-  inline void transmit(void *bufTx, size_t count) {
+  inline void transmit(const void *bufTx, size_t count) {
     SPIDRV_MTransmitB(spidrvHandle, bufTx, count);
   }
   // After performing a group of transfers and releasing the chip select
