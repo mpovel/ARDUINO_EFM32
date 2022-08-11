@@ -16,7 +16,7 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "arduino.h"
+#include "Arduino.h"
 
 /* Workaround for missing UART_ methods for EFM32G890 */
 #ifdef UART0

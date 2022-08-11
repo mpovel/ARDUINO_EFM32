@@ -25,21 +25,21 @@ EFM32G890.build.mcu=cortex-m3 -mthumb
 EFM32G890.menu.cpu.128=EFM32G890F128(128kFLASH 16kSRAM)
 EFM32G890.menu.cpu.128.build.board=EFM32G890f128
 EFM32G890.menu.cpu.128.build.extra_flags=-DARM_MATH_CM3 -DEFM32G890F128 -DRAMSIZE={upload.maximum_data_size}
-EFM32G890.menu.cpu.128.build.ldscript=ld/EFM32G890f128.ld
+EFM32G890.menu.cpu.128.build.ldscript=ld/efm32g890f128.ld
 EFM32G890.menu.cpu.128.upload.maximum_size=131072
 EFM32G890.menu.cpu.128.upload.maximum_data_size=16384
 
 EFM32G890.menu.cpu.64=EFM32G890F64(64kFLASH 16kSRAM)
 EFM32G890.menu.cpu.64.build.board=EFM32G890f64
 EFM32G890.menu.cpu.64.build.extra_flags=-DARM_MATH_CM3 -DEFM32G890F64 -DRAMSIZE={upload.maximum_data_size}
-EFM32G890.menu.cpu.64.build.ldscript=ld/EFM32G890f64.ld
+EFM32G890.menu.cpu.64.build.ldscript=ld/efm32g890f64.ld
 EFM32G890.menu.cpu.64.upload.maximum_size=65536
 EFM32G890.menu.cpu.64.upload.maximum_data_size=16384
 
 EFM32G890.menu.cpu.32=EFM32G890F32(32kFLASH 8kSRAM)
 EFM32G890.menu.cpu.32.build.board=EFM32G890f32
 EFM32G890.menu.cpu.32.build.extra_flags=-DARM_MATH_CM3 -DEFM32G890F32 -DRAMSIZE={upload.maximum_data_size}
-EFM32G890.menu.cpu.32.build.ldscript=ld/EFM32G890f32.ld
+EFM32G890.menu.cpu.32.build.ldscript=ld/efm32g890f32.ld
 EFM32G890.menu.cpu.32.upload.maximum_size=32768
 EFM32G890.menu.cpu.32.upload.maximum_data_size=8192
 
@@ -133,21 +133,21 @@ EFM32G840.build.mcu=cortex-m3 -mthumb
 EFM32G840.menu.cpu.128=EFM32G840F128(128kFLASH 16kSRAM)
 EFM32G840.menu.cpu.128.build.board=efm32G840f128
 EFM32G840.menu.cpu.128.build.extra_flags=-DARM_MATH_CM3 -DEFM32G840F128 -DRAMSIZE={upload.maximum_data_size}
-EFM32G840.menu.cpu.128.build.ldscript=ld/efm32G840f128.ld
+EFM32G840.menu.cpu.128.build.ldscript=ld/efm32g840f128.ld
 EFM32G840.menu.cpu.128.upload.maximum_size=131072
 EFM32G840.menu.cpu.128.upload.maximum_data_size=16384
 
 EFM32G840.menu.cpu.64=EFM32G840F64(64kFLASH 16kSRAM)
 EFM32G840.menu.cpu.64.build.board=EFM32G840f64
 EFM32G840.menu.cpu.64.build.extra_flags=-DARM_MATH_CM3 -DEFM32G840F64 -DRAMSIZE={upload.maximum_data_size}
-EFM32G840.menu.cpu.64.build.ldscript=ld/EFM32G840f64.ld
+EFM32G840.menu.cpu.64.build.ldscript=ld/efm32g840f64.ld
 EFM32G840.menu.cpu.64.upload.maximum_size=65536
 EFM32G840.menu.cpu.64.upload.maximum_data_size=16384
 
 EFM32G840.menu.cpu.32=EFM32G840F32(32kFLASH 8kSRAM)
 EFM32G840.menu.cpu.32.build.board=EFM32G840f32
 EFM32G840.menu.cpu.32.build.extra_flags=-DARM_MATH_CM3 -DEFM32G840F32 -DRAMSIZE={upload.maximum_data_size}
-EFM32G840.menu.cpu.32.build.ldscript=ld/EFM32G840f32.ld
+EFM32G840.menu.cpu.32.build.ldscript=ld/efm32g840f32.ld
 EFM32G840.menu.cpu.32.upload.maximum_size=32768
 EFM32G840.menu.cpu.32.upload.maximum_data_size=8192
 
@@ -230,36 +230,36 @@ EFM32G200.name=EFM32G200Fx
 
 EFM32G200.build.core=arduino
 EFM32G200.build.series=EFM32G
-EFM32G200.build.variant=efm32G200f
-EFM32G200.build.board=efm32G210f128
+EFM32G200.build.variant=efm32g200f
+EFM32G200.build.board=efm32g210f128
 EFM32G200.build.mcu=cortex-m3 -mthumb
 #EFM32G200.build.spacil_includes="-I{build.core.path}/efm32" "-I{build.system.path}" "-I{build.system.path}/emlib/inc" "-I{build.system.path}/emlib/src"
 
 EFM32G200.menu.cpu.128=EFM32G210F128(128kFLASH 16kSRAM)
-EFM32G200.menu.cpu.128.build.board=efm32G210f128
+EFM32G200.menu.cpu.128.build.board=efm32g210f128
 EFM32G200.menu.cpu.128.build.extra_flags=-DARM_MATH_CM3 -DEFM32G210F128 -DRAMSIZE={upload.maximum_data_size}
-EFM32G200.menu.cpu.128.build.ldscript=ld/efm32G210f128.ld
+EFM32G200.menu.cpu.128.build.ldscript=ld/efm32g210f128.ld
 EFM32G200.menu.cpu.128.upload.maximum_size=131072
 EFM32G200.menu.cpu.128.upload.maximum_data_size=16384
 
 EFM32G200.menu.cpu.64=EFM32G200F64(64kFLASH 16kSRAM)
-EFM32G200.menu.cpu.64.build.board=efm32G200f64
+EFM32G200.menu.cpu.64.build.board=efm32g200f64
 EFM32G200.menu.cpu.64.build.extra_flags=-DARM_MATH_CM3 -DEFM32G200F64 -DRAMSIZE={upload.maximum_data_size}
-EFM32G200.menu.cpu.64.build.ldscript=ld/efm32G200f64.ld
+EFM32G200.menu.cpu.64.build.ldscript=ld/efm32g200f64.ld
 EFM32G200.menu.cpu.64.upload.maximum_size=65536
 EFM32G200.menu.cpu.64.upload.maximum_data_size=16384
 
 EFM32G200.menu.cpu.32=EFM32G200F32(32kFLASH 8kSRAM)
-EFM32G200.menu.cpu.32.build.board=efm32G200f32
+EFM32G200.menu.cpu.32.build.board=efm32g200f32
 EFM32G200.menu.cpu.32.build.extra_flags=-DARM_MATH_CM3 -DEFM32G200F32 -DRAMSIZE={upload.maximum_data_size}
-EFM32G200.menu.cpu.32.build.ldscript=ld/efm32G200f32.ld
+EFM32G200.menu.cpu.32.build.ldscript=ld/efm32g200f32.ld
 EFM32G200.menu.cpu.32.upload.maximum_size=32768
 EFM32G200.menu.cpu.32.upload.maximum_data_size=8192
 
 EFM32G200.menu.cpu.16=EFM32G200F16(16kFLASH 8kSRAM)
-EFM32G200.menu.cpu.16.build.board=efm32G200f16
+EFM32G200.menu.cpu.16.build.board=efm32g200f16
 EFM32G200.menu.cpu.16.build.extra_flags=-DARM_MATH_CM3 -DEFM32G200F16 -DRAMSIZE={upload.maximum_data_size}
-EFM32G200.menu.cpu.16.build.ldscript=ld/efm32G200f16.ld
+EFM32G200.menu.cpu.16.build.ldscript=ld/efm32g200f16.ld
 EFM32G200.menu.cpu.16.upload.maximum_size=16384
 EFM32G200.menu.cpu.16.upload.maximum_data_size=8192
 
