@@ -1,5 +1,7 @@
 #!/bin/bash
 rm -f package/2022.8.11.tar.gz
+find . -name "._*" -exec rm -rf {} \;
+dot_clean .
 tar czf package/efm32tools_win-2022.8.11.tar.gz tools/st_upload.bat tools/j_upload.bat
 tar czf package/efm32tools_macosx-2022.8.11.tar.gz tools/st_upload.sh tools/j_upload.sh
 tar czf package/efm32tools_linux64-2022.8.11.tar.gz tools/st_upload.sh tools/j_upload.sh
