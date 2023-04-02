@@ -288,6 +288,10 @@ EFM32G200.menu.clock_source.hfrc1.build.f_cpu=1000000L -DOSC{build.osc}
 #EFM32G200.menu.clock_source.hfxO.build.osc=32000000L -DUSE_HFXO
 #EFM32G200.menu.clock_source.Lfxo=LFXO
 #EFM32G200.menu.clock_source.LfxO.build.osc=32768L -DUSE_LFXO
+EFM32G200.menu.clock_source.hfxo=HFXO (24M)
+EFM32G200.menu.clock_source.hfxo.build.osc=24000000L -DUSE_HFXO
+EFM32G200.menu.clock_source.hfxo.build.f_cpu=24000000L -DOSC{build.osc}
+
 
 EFM32G200.menu.serial.leserial=LEUART0(0#PD4/5,1#PB13/14)
 EFM32G200.menu.serial.leserial.build.extra_flags_serial=-DMENU_SERIAL=SerialLEUART0

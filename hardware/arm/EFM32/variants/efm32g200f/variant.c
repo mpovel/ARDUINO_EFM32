@@ -1,6 +1,20 @@
 #include "efm32.h"
 
 void SystemClock_Config(void) __attribute__ ((weak));
+
+
+extern void HFXO_enter_DefaultMode_from_RESET(void) {
+    // $[HFXO]
+    CMU->CTRL = (CMU->CTRL & ~_CMU_CTRL_HFXOMODE_MASK) | CMU_CTRL_HFXOMODE_XTAL;
+
+    CMU->CTRL = (CMU->CTRL & ~_CMU_CTRL_HFXOBOOST_MASK)
+                | CMU_CTRL_HFXOBOOST_50PCENT;
+
+    SystemHFXOClockSet(F_CPU);
+
+    // [HFXO]$
+}
+
 void SystemClock_Config(void) {
 #ifdef USE_HFXO
     HFXO_enter_DefaultMode_from_RESET();   //2    select  extern high Frequency osc Clock
